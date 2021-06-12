@@ -42,3 +42,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Skybox
+    uniqueID: 2659347433
+    locked: 0
+  - name: Background
+    uniqueID: 4207952375
+    locked: 0
+  - name: Platforms
+    uniqueID: 1891731611
+    locked: 0
+  - name: BehndPlayer
+    uniqueID: 4086344215
+    locked: 0
+  - name: Player
+    uniqueID: 3829376929
+    locked: 0
+  - name: AbovePlayer
+    uniqueID: 3863558415
+    locked: 0
