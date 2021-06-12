@@ -6,10 +6,11 @@ public class AudioMusic : MonoBehaviour
 {
     public AudioClip[] musics;
     private AudioSource audioSource;
+    public GameObject audioManager;
     // Start is called before the first frame update
     void Start()
     {
-        audioSource=FindObjectOfType<AudioSource>();
+        audioSource=audioManager.GetComponent<AudioSource>();
         audioSource.loop=false;
     }
 
