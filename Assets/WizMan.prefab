@@ -197,10 +197,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initHealth: 3
+  invulnTime: 2
   jumpForce: 50
-  groundCheckThreshold: 1
+  groundCheckThreshold: 1.5
   jumpCount: 1
   maxMoveSpeed: 30
+  slopeCheckMod: 2
+  slopeDownForce: 50
 --- !u!114 &4367697047335524918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,3 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facf54fd3ee9b7a4c873895900ce51af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbLifetime: 5
+  orbPrefab: {fileID: 0}
+  orbSpawnPos: {fileID: 0}
+  orbMoveSpeed: 0
+  explosionRadius: 8

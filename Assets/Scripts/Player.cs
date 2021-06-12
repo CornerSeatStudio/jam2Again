@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
     public AudioClip audJump;
     public int initHealth = 3;
+    public float invulnTime = 2f;
 
     [Header("Jump Settings")]
     public float jumpForce = 100f;
@@ -16,22 +17,27 @@ public class Player : MonoBehaviour {
     public float maxMoveSpeed = 10f;
     float inputRaw;
     int lastMoveDir = 0;
+    public float slopeCheckMod = 2f;
+    public float slopeDownForce = 50f;
     
     //normal dependencies
     public Rigidbody2D Rb2D {get; private set; }
     public Collider2D Col {get; private set; }
     public Animator Animator {get; private set; }
+    public GameHandler gameHandler {get; private set; }
 
     //other
     int Health {get; set; }
     int jumpMode;  //0 - none left, >0 - jumps left
-    bool facingLeft = false;
+    public bool FacingLeft {get; private set; } = false;
+    public bool Invulnerable {get; set; } = false;
     // bool Attacking {get; set; } = false;
 
     void Start() {
         Rb2D = GetComponent<Rigidbody2D>();
         Col = GetComponent<Collider2D>();
         Animator =  GetComponent<Animator>();
+        gameHandler = FindObjectOfType<GameHandler>();
 
         Health = initHealth;
         jumpMode = jumpCount;
@@ -39,8 +45,11 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate() {
         handleMovement();
-        
+        if(OnSlope()) Rb2D.AddForce(Vector2.down * slopeDownForce);
+
     }
+
+
 
     // void clampVelocity() {
     //     if(isGrounded())  Rb2D.velocity = Vector3.ClampMagnitude(Rb2D.velocity, maxMoveSpeed);
@@ -63,27 +72,24 @@ public class Player : MonoBehaviour {
     }
     bool switchedDir() => lastMoveDir == (int) inputRaw;
     void flipToFace() {
-        if(inputRaw > 0 && facingLeft || inputRaw < 0 && !facingLeft){
+        if(inputRaw > 0 && FacingLeft || inputRaw < 0 && !FacingLeft){
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y); 
-            facingLeft = !facingLeft;
+            FacingLeft = !FacingLeft;
         }
     }
     
     void handleJump(){
         // Debug.Log(isGrounded());
-        if(jumpMode != 0 && isGrounded() && Input.GetButtonDown("Jump")){
+        if(jumpMode != 0 && (isGrounded() || OnSlope()) && Input.GetButtonDown("Jump")){
             jumpMode--;
-            // Rb2D.velocity = new Vector2(Rb2D.velocity.x, jumpForce);
-
-            // Rb2D.velocity += (new Vector2(0f, jumpForce *10) );
-            // Debug.Log(Rb2D.velocity);
+     
             Rb2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             AudioSource audio = GetComponent<AudioSource>();
             audio.PlayOneShot(audJump);
 
         }
 
-        if(jumpMode == 0 && isGrounded()){ //temp
+        if(jumpMode == 0 && (isGrounded() || OnSlope())){ //temp
             jumpMode = jumpCount;
         }
     }
@@ -102,8 +108,39 @@ public class Player : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Col.bounds.extents.y + groundCheckThreshold, ~LayerMask.GetMask("Player"));
         return hit;
     }
+
+    bool OnSlope(){
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Col.bounds.extents.y * slopeCheckMod, ~LayerMask.GetMask("Player"));
+        return hit && hit.normal != Vector2.up;
+    }
+
+    public void takeDamage(){
+        Health--;
+        if(Health <= 0){
+            onDeath();
+        }
+    }
+
+    void onDeath(){
+        gameHandler.onGameEnd();
+    }
+
+    
+    IEnumerator tempInvuln(){
+        Invulnerable = true;
+        yield return new WaitForSeconds(invulnTime);
+        Invulnerable = false;
+    }
+
     private void OnCollisionEnter2D(Collision2D other) {
-        
+
+        if(other.gameObject.CompareTag("Enemy")){
+            if(Invulnerable){
+                Physics2D.IgnoreCollision(other.collider, Col);
+            } else {
+                takeDamage();
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other) {

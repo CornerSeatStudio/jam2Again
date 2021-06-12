@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4642609777315149384}
   - component: {fileID: 347073032014834179}
   m_Layer: 3
-  m_Name: Player
+  m_Name: MeleeMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,10 +166,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initHealth: 3
+  invulnTime: 2
   jumpForce: 50
-  groundCheckThreshold: 1
+  groundCheckThreshold: 1.5
   jumpCount: 1
   maxMoveSpeed: 30
+  slopeCheckMod: 2
+  slopeDownForce: 50
 --- !u!114 &347073032014834179
 MonoBehaviour:
   m_ObjectHideFlags: 0
