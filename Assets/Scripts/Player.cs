@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
     public Rigidbody2D Rb2D {get; private set; }
     public Collider2D Col {get; private set; }
     public Animator Animator {get; private set; }
+    public SpriteRenderer sprenderer {get; private set; }
     public GameHandler gameHandler {get; private set; }
 
     //other
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour {
         Rb2D = GetComponent<Rigidbody2D>();
         Col = GetComponent<Collider2D>();
         Animator =  GetComponent<Animator>();
+        sprenderer = GetComponent<SpriteRenderer>();
         gameHandler = FindObjectOfType<GameHandler>();
 
         Health = initHealth;
@@ -118,6 +120,8 @@ public class Player : MonoBehaviour {
         Health--;
         if(Health <= 0){
             onDeath();
+        } else {
+            StartCoroutine(tempInvuln());
         }
     }
 
@@ -126,25 +130,54 @@ public class Player : MonoBehaviour {
     }
 
     
-    IEnumerator tempInvuln(){
-        Invulnerable = true;
-        yield return new WaitForSeconds(invulnTime);
-        Invulnerable = false;
+    IEnumerator flashing;
+
+    IEnumerator flashHandle(){
+        while(true){
+            sprenderer.color = new Color(1f,1f,1f,.2f);
+            yield return new WaitForSeconds(.2f);
+            sprenderer.color = Color.white;
+            yield return new WaitForSeconds(.2f);
+
+
+        }
     }
 
+    IEnumerator tempInvuln(){
+        Invulnerable = true;
+        flashing = flashHandle();
+        StartCoroutine(flashing);
+        yield return new WaitForSeconds(invulnTime);
+        StopCoroutine(flashing);
+        sprenderer.color = Color.white;
+        Invulnerable = false;
+        // Debug.Log("invlun done");
+    }
+
+    IEnumerator tempIgnoreCollision(Collision2D other){
+        Physics2D.IgnoreCollision(other.collider, Col);
+        yield return new WaitForSeconds(invulnTime);
+        Physics2D.IgnoreCollision(other.collider, Col, false);
+
+    }
     private void OnCollisionEnter2D(Collision2D other) {
 
         if(other.gameObject.CompareTag("Enemy")){
             if(Invulnerable){
-                Physics2D.IgnoreCollision(other.collider, Col);
+                StartCoroutine(tempIgnoreCollision(other));
             } else {
                 takeDamage();
             }
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other) {
-        
-    }
+
+    // private void OnCollisionExit2D(Collision2D other) {
+    //     if(other.gameObject.CompareTag("Enemy")){
+    //         if(Invulnerable){
+    //             Physics2D.IgnoreCollision(other.collider, Col, false);
+    //         }
+    //     }
+    // }
 
 }
