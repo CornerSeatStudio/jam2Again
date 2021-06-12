@@ -15,7 +15,6 @@ public class WizMan : MonoBehaviour {
     void conductAttack(){
         player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
        
-        
 
     }
 }

@@ -20,9 +20,12 @@ public class BowMan : MonoBehaviour {
         player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
        
         //todo: do rotation
-        GameObject arrow = Instantiate(arrowPrefab, arrowSpawn.position, transform.rotation);
+         Vector3 rot = transform.rotation.eulerAngles;
+        
+        GameObject arrow = Instantiate(arrowPrefab, arrowSpawn.position, Quaternion.Euler(new Vector3(rot.x,rot.y+ (player.FacingLeft ? 180 : 0),rot.z)));
+        Destroy(arrow, 5f);
         Rigidbody2D arrb = arrow.GetComponent<Rigidbody2D>();
-        arrb.AddForce(transform.position + transform.right * arrowForce * (transform.localScale.x > 0 ? 1 : -1), ForceMode2D.Impulse);
+        arrb.AddForce(transform.right * arrowForce * (transform.localScale.x > 0 ? 1 : -1), ForceMode2D.Impulse);
     
 
     }

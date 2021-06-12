@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     //other
     int Health {get; set; }
     int jumpMode;  //0 - none left, >0 - jumps left
-    bool facingLeft = false;
+    public bool FacingLeft {get; private set; } = false;
     // bool Attacking {get; set; } = false;
 
     void Start() {
@@ -62,9 +62,9 @@ public class Player : MonoBehaviour {
     }
     bool switchedDir() => lastMoveDir == (int) inputRaw;
     void flipToFace() {
-        if(inputRaw > 0 && facingLeft || inputRaw < 0 && !facingLeft){
+        if(inputRaw > 0 && FacingLeft || inputRaw < 0 && !FacingLeft){
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y); 
-            facingLeft = !facingLeft;
+            FacingLeft = !FacingLeft;
         }
     }
     
@@ -98,8 +98,21 @@ public class Player : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Col.bounds.extents.y + groundCheckThreshold, ~LayerMask.GetMask("Player"));
         return hit;
     }
-    private void OnCollisionEnter2D(Collision2D other) {
+
+    void takeDamage(){
+        Health--;
+        if(Health <= 0){
+            onDeath();
+        }
+    }
+
+    void onDeath(){
         
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Enemy")){
+
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other) {
