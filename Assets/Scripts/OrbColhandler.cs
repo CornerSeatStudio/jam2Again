@@ -17,6 +17,7 @@ public class OrbColhandler : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("contact with orb");
         Exploding = true;
     }
 }

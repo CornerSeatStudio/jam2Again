@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnHandling : MonoBehaviour
+public class EnemySpawnHandling : MonoBehaviour
 {
 
     public List<Transform> spawnpoints;
@@ -11,18 +11,20 @@ public class SpawnHandling : MonoBehaviour
     public float spawnsPerSecClimb;
     public float SpawnsPerSec {get; private set; }
     
-    public float orientationConfiguration = 0f;
+    public float orientationConfiguration = 0f; //todo - to determine which plane to spawn on lol
     GameHandler gameHandler;
     
     bool isActive = false;
 
     private void Start() {
+        SpawnsPerSec = spawnsPerSecStart;
+
         gameHandler =  FindObjectOfType<GameHandler>();
         checkIsActive();
         StartCoroutine(spawnHandling());
     }
 
-    void checkIsActive() => isActive = orientationConfiguration == gameHandler.CurrRotation.x;
+    public void checkIsActive() => isActive = orientationConfiguration == gameHandler.CurrRotation.x;
 
     IEnumerator spawnHandling(){
         while(isActive && !gameHandler.GameEnd){

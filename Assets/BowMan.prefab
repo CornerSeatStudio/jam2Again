@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3027654041839870059}
   - component: {fileID: 3027654041839870071}
   - component: {fileID: 3027654041839870060}
+  - component: {fileID: 149877005003160199}
   m_Layer: 3
   m_Name: BowMan
   m_TagString: Untagged
@@ -31,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.8, y: 6.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1484856351611427569}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -465590367
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -8307952290382044993, guid: 2f2089ac3a9d6534c9eaa19563b085c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -165,7 +167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audJump: {fileID: 0}
-  audSwing: {fileID: 0}
   initHealth: 3
   invulnTime: 2
   jumpForce: 60
@@ -174,3 +175,49 @@ MonoBehaviour:
   maxMoveSpeed: 30
   slopeCheckMod: 2
   slopeDownForce: 50
+--- !u!114 &149877005003160199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027654041839870061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9fe2cd5ea6a4554c94b7778b2323585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audArrow: {fileID: 0}
+  arrowForce: 500
+  arrowPrefab: {fileID: 4280031618453610032, guid: 8f04352d20fc2454084fa89daf3d6a43, type: 3}
+  arrowSpawn: {fileID: 1484856351611427569}
+--- !u!1 &4019445940931051599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1484856351611427569}
+  m_Layer: 3
+  m_Name: ArrowPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1484856351611427569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019445940931051599}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.4399986, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3027654041839870056}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -104,8 +104,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -465590367
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -8868724237307797146, guid: 224a62f06c187d84f812ea07c4341263, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -197,7 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audJump: {fileID: 0}
-  audSwing: {fileID: 0}
   initHealth: 3
   invulnTime: 2
   jumpForce: 60
@@ -218,9 +217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facf54fd3ee9b7a4c873895900ce51af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audExplod: {fileID: 0}
+  audCast: {fileID: 0}
   orbLifetime: 5
-  orbPrefab: {fileID: 0}
-  orbSpawnPos: {fileID: 0}
+  orbPrefab: {fileID: 997238729962857615, guid: a77cdca776e147646960bc40eb69ff5b, type: 3}
+  orbSpawnPos: {fileID: 1628418629948123622}
   orbMoveSpeed: 0
   explosionRadius: 8
   attackCooldown: 2

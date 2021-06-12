@@ -53,6 +53,7 @@ public class WizMan : MonoBehaviour {
             yield return new WaitForFixedUpdate();
         }   
         orb.Rb2D.velocity = Vector2.zero;
+
         explodeOrb(orb.gameObject);
     }
 

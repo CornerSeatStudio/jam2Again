@@ -8,7 +8,7 @@ public class GameHandler : MonoBehaviour
 
     public Player player1;
     public GameObject rotatingContraption;
-    public List<GameObject> playerChoices;
+    public List<GameObject> characters;
     public static float currScore;
     public Animator cameraAnimator;
     public float rotSmoothness;
@@ -36,6 +36,12 @@ public class GameHandler : MonoBehaviour
 
     void changeCharacter(Player player){
         Debug.Log("changing char");
+        //for now allow to switch to same character by chance
+        
+        //POOF and switcheroo
+        Instantiate(characters[Random.Range(0, characters.Count)], player.transform.position, player.transform.rotation);
+        Destroy(player.gameObject);
+
     }
 
     void spawnNextPickup(){
