@@ -2016,6 +2016,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 5250290811bf7944a882fd2765bdf70e, type: 3}
     - target: {fileID: 4367697047335524918, guid: 6b1e481cbb53e874f96ffbd83182d78b, type: 3}
+      propertyPath: audCast
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d159b668cfb9f74b9f3a7183062bcfa, type: 3}
+    - target: {fileID: 4367697047335524918, guid: 6b1e481cbb53e874f96ffbd83182d78b, type: 3}
       propertyPath: audExplod
       value: 
       objectReference: {fileID: 8300000, guid: 3f7c077deaaa4e745b897a67bf57e5de, type: 3}
