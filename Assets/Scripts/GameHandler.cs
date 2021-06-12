@@ -4,8 +4,30 @@ using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
+
+    public static float currScore;
     public Animator cameraAnimator;
     private bool inTransition = false;
+
+    public void Start(){
+        spawnNextPickup();
+    }
+
+    public void increaseScore(Player player){
+        currScore++;
+        changeCharacter(player);
+        spawnNextPickup();
+    }
+
+    void changeCharacter(Player player){
+        Debug.Log("changing char");
+    }
+
+    void spawnNextPickup(){
+        Debug.Log("spawning pickup");
+
+    }
+
     private void Update() {
         if(!inTransition && Input.GetKeyDown(KeyCode.X)){
             StartCoroutine(OnFlipActivate());

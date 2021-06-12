@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 6b2bc44f75127244798a28a78174a82d
+guid: 31d47aa20cc4c7746b1e69ab7d548397
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -427365808342637409
-    second: orbBlow_0
+      213: -6745260898475368135
+    second: blowFix_0
   - first:
-      213: -2503563248094842540
-    second: orbBlow_1
+      213: 5063291838752795774
+    second: blowFix_1
   - first:
-      213: 1093265975505908991
-    second: orbBlow_2
+      213: 8781226111442555909
+    second: blowFix_2
   - first:
-      213: -4896654502127338748
-    second: orbBlow_3
+      213: 8772308434719418285
+    second: blowFix_3
   - first:
-      213: 5477304278607732676
-    second: orbBlow_4
+      213: 7230445781175282254
+    second: blowFix_4
   - first:
-      213: 480674273727182278
-    second: orbBlow_5
+      213: 1996819664541940392
+    second: blowFix_5
   - first:
-      213: -7384784043980668527
-    second: orbBlow_6
+      213: -7367151426373389106
+    second: blowFix_6
   - first:
-      213: 5469137314884763210
-    second: orbBlow_7
+      213: -3246151407485845383
+    second: blowFix_7
   - first:
-      213: 7331734457896506002
-    second: orbBlow_8
+      213: -299292299094420472
+    second: blowFix_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -154,13 +154,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: orbBlow_0
+      name: blowFix_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9312b0563f40462a0800000000000000
+      internalID: -6745260898475368135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blowFix_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7caef2d91d644640800000000000000
+      internalID: 5063291838752795774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blowFix_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5041be89f9e2dd970800000000000000
+      internalID: 8781226111442555909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blowFix_3
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,41 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f94e694cf01b11af0800000000000000
-      internalID: -427365808342637409
+      spriteID: da72d9f2b008db970800000000000000
+      internalID: 8772308434719418285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orbBlow_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45175948d7e814dd0800000000000000
-      internalID: -2503563248094842540
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orbBlow_2
+      name: blowFix_4
       rect:
         serializedVersion: 2
         x: 32
         y: 32
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +252,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff4fc03cc9f0c2f00800000000000000
-      internalID: 1093265975505908991
+      spriteID: e4aaca22124b75460800000000000000
+      internalID: 7230445781175282254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orbBlow_3
+      name: blowFix_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,62 +273,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40bf1e48ca69b0cb0800000000000000
-      internalID: -4896654502127338748
+      spriteID: 8aa7981c7e026bb10800000000000000
+      internalID: 1996819664541940392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orbBlow_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cf142da83b430c40800000000000000
-      internalID: 5477304278607732676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orbBlow_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c57d2a84b2bba600800000000000000
-      internalID: 480674273727182278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orbBlow_6
+      name: blowFix_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,41 +294,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1914f8bc90af38990800000000000000
-      internalID: -7384784043980668527
+      spriteID: ec470808fce92c990800000000000000
+      internalID: -7367151426373389106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orbBlow_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4e3a81496746eb40800000000000000
-      internalID: 5469137314884763210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orbBlow_8
+      name: blowFix_7
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,8 +315,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 292996ee4ad8fb560800000000000000
-      internalID: 7331734457896506002
+      spriteID: 9700ca56e7a53f2d0800000000000000
+      internalID: -3246151407485845383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blowFix_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804977c5d33b8dbf0800000000000000
+      internalID: -299292299094420472
       vertices: []
       indices: 
       edges: []
@@ -345,7 +345,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: eab44cd523799db449e340f9b08852fc
+    spriteID: 87baaedd3ba78304e9a1aa3f66e570e9
     internalID: 0
     vertices: []
     indices: 
