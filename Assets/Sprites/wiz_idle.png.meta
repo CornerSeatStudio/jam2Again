@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 4fc8a163f67d55f46b18d369dd2e7450
+guid: 224a62f06c187d84f812ea07c4341263
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5445776975924220134
-    second: player_jac_walk_0
+      213: -8868724237307797146
+    second: 70e9bb2635b2b87141ecaa45b246653_0
   - first:
-      213: -1792047817965285709
-    second: player_jac_walk_1
-  - first:
-      213: -7746244624430108615
-    second: player_jac_walk_2
-  - first:
-      213: 4570920816110651083
-    second: player_jac_walk_3
+      213: 4015599597955379010
+    second: 70e9bb2635b2b87141ecaa45b246653_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +133,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_jac_walk_0
+      name: 70e9bb2635b2b87141ecaa45b246653_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,35 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1f290081b6bc64b0800000000000000
-      internalID: -5445776975924220134
+      spriteID: 6612f507b46fbe480800000000000000
+      internalID: -8868724237307797146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_jac_walk_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3be4aa5110e5127e0800000000000000
-      internalID: -1792047817965285709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_walk_2
+      name: 70e9bb2635b2b87141ecaa45b246653_1
       rect:
         serializedVersion: 2
         x: 0
@@ -195,29 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93070913e8fcf7490800000000000000
-      internalID: -7746244624430108615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_walk_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc6c6b4b34c2f6f30800000000000000
-      internalID: 4570920816110651083
+      spriteID: 24fe45c0f864ab730800000000000000
+      internalID: 4015599597955379010
       vertices: []
       indices: 
       edges: []
@@ -225,7 +177,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ff9c1557d9b35864aae390c73940857d
+    spriteID: f2fac4cb8291d2143a33c238d4129570
     internalID: 0
     vertices: []
     indices: 
