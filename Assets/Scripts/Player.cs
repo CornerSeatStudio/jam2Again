@@ -74,6 +74,8 @@ public class Player : MonoBehaviour {
     }
     bool switchedDir() => lastMoveDir == (int) inputRaw;
     void flipToFace() {
+        if(Health <= 0) return;
+
         if(inputRaw > 0 && FacingLeft || inputRaw < 0 && !FacingLeft){
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y); 
             FacingLeft = !FacingLeft;
@@ -81,6 +83,7 @@ public class Player : MonoBehaviour {
     }
     
     void handleJump(){
+        if(Health <= 0) return;
         // Debug.Log(isGrounded());
         if(jumpMode != 0 && (isGrounded() || OnSlope()) && Input.GetButtonDown("Jump")){
             jumpMode--;
@@ -97,6 +100,7 @@ public class Player : MonoBehaviour {
     }
 
     void handleMovement(){
+        if(Health <= 0) return;
 
         // float sped = Mathf.SmoothDamp(Rb2D.velocity.x, maxMoveSpeed * inputRaw, ref currVel, smooth);
         Rb2D.velocity = new Vector2(inputRaw * maxMoveSpeed, Rb2D.velocity.y);
@@ -126,6 +130,10 @@ public class Player : MonoBehaviour {
     }
 
     void onDeath(){
+        Animator.Play(Animator.StringToHash("death"));
+        Col.enabled = false;
+        Rb2D.isKinematic = true;
+        // Destroy(this); //temporarily
         gameHandler.onGameEnd();
     }
 
@@ -157,17 +165,16 @@ public class Player : MonoBehaviour {
     IEnumerator tempIgnoreCollision(Collision2D other){
         Physics2D.IgnoreCollision(other.collider, Col);
         yield return new WaitForSeconds(invulnTime);
-        Physics2D.IgnoreCollision(other.collider, Col, false);
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - maybe just kill the bastard at touch
+        // Debug.Log("iddsfk");
 
     }
     private void OnCollisionEnter2D(Collision2D other) {
 
-        if(other.gameObject.CompareTag("Enemy")){
-            if(Invulnerable){
-                StartCoroutine(tempIgnoreCollision(other));
-            } else {
-                takeDamage();
-            }
+        if(other.gameObject.CompareTag("Enemy") && !Invulnerable){
+            takeDamage();
+            StartCoroutine(tempIgnoreCollision(other));
+            Debug.Log("perhaps");
         }
     }
 
