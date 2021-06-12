@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class BowMan : MonoBehaviour {
 
+     public AudioClip audArrow;
     public float arrowForce = 500f;
     Player player;
     public GameObject arrowPrefab;
@@ -26,6 +27,8 @@ public class BowMan : MonoBehaviour {
         Destroy(arrow, 5f);
         Rigidbody2D arrb = arrow.GetComponent<Rigidbody2D>();
         arrb.AddForce(transform.right * arrowForce * (transform.localScale.x > 0 ? 1 : -1), ForceMode2D.Impulse);
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(audArrow);
     
 
     }
