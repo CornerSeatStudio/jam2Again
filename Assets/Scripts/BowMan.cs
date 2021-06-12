@@ -19,7 +19,8 @@ public class BowMan : MonoBehaviour {
     void conductAttack(){
         player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
        
-        GameObject arrow = Instantiate(arrowPrefab, arrowSpawn.position, arrowSpawn.rotation);
+        //todo: do rotation
+        GameObject arrow = Instantiate(arrowPrefab, arrowSpawn.position, transform.rotation);
         Rigidbody2D arrb = arrow.GetComponent<Rigidbody2D>();
         arrb.AddForce(transform.position + transform.right * arrowForce * (transform.localScale.x > 0 ? 1 : -1), ForceMode2D.Impulse);
     

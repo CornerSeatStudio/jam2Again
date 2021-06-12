@@ -141,7 +141,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sword_move
+  m_Name: wiz_mov
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -156,7 +156,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ce4e977f16636854c89622de93ef1abc, type: 2}
+  m_Motion: {fileID: 7400000, guid: 60b8e7a37365ce84794236477a2e64c2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -169,7 +169,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sword_idle
+  m_Name: wiz_idl
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -184,7 +184,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 04fa87fad0378d646a99c9047e8ea7de, type: 2}
+  m_Motion: {fileID: 7400000, guid: fad0b47c70eac9041814827e4d7f6bf1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -197,7 +197,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sword_attack
+  m_Name: wiz_atta
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -211,7 +211,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d6c05ed83e36c98418819bbdb7eb3375, type: 2}
+  m_Motion: {fileID: 7400000, guid: dc852f8d5330cab4eaf1a4e13e852c4f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
