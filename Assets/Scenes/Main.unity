@@ -447,6 +447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeMan
       objectReference: {fileID: 0}
+    - target: {fileID: 4642609777315149385, guid: cb1c7f3614acedd439ac5d1f86f39edb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4642609777315149388, guid: cb1c7f3614acedd439ac5d1f86f39edb, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -896,6 +900,7 @@ GameObject:
   - component: {fileID: 1983834427}
   - component: {fileID: 1983834426}
   - component: {fileID: 1983834425}
+  - component: {fileID: 1983834429}
   m_Layer: 0
   m_Name: CheekyFlighter
   m_TagString: Enemy
@@ -1076,6 +1081,25 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!95 &1983834429
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983834421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64636381500afe049a10d86cb8fbe154, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2026275556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,7 +1480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367697047335524916, guid: 6b1e481cbb53e874f96ffbd83182d78b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4367697047335524918, guid: 6b1e481cbb53e874f96ffbd83182d78b, type: 3}
       propertyPath: orbPrefab

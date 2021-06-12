@@ -12,11 +12,14 @@ public class ArrowColHandler : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        rb2D.bodyType = RigidbodyType2D.Static;
-        transform.parent = other.gameObject.transform;
-        col2D.enabled = false;
+        
+        // rb2D.bodyType = RigidbodyType2D.Kinematic;
+        // transform.parent = other.gameObject.transform;
+        // col2D.enabled = false;      
+
         if (other.gameObject.CompareTag("Enemy")) {
             other.gameObject.GetComponent<Baddie>().takeDamage();
-        }
+            // Destroy(this.gameObject);
+        } 
     }
 }

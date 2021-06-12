@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 997238729962857612}
   - component: {fileID: 8338237003636384436}
   - component: {fileID: 7232619504064322113}
+  - component: {fileID: 1426951053794891960}
   m_Layer: 0
   m_Name: orb
   m_TagString: Untagged
@@ -123,7 +124,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &7232619504064322113
 CircleCollider2D:
@@ -135,9 +136,21 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &1426951053794891960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997238729962857615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565e09e5cfd44734ab266d2f1604ca4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

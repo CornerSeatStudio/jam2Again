@@ -10,32 +10,46 @@ public class WizMan : MonoBehaviour {
     public Transform orbSpawnPos;
     public float orbMoveSpeed;
     public float explosionRadius = 8f;
-
+    
+    public float attackCooldown = 2f;
+    bool cooldowning = false;
+   
     private void Start() {
         player = this.GetComponent<Player>();
     }
     private void Update() {
-        if(Input.GetButtonDown("Fire1")) conductAttack();    
+        if(Input.GetButtonDown("Fire1") && !cooldowning) {
+            conductAttack();   
+            StartCoroutine(manageCooldown());
+        } 
+    }
+
+    IEnumerator manageCooldown(){
+        cooldowning = true;
+        yield return new WaitForSeconds(attackCooldown);
+        cooldowning = false;
     }
 
     void conductAttack(){
         player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
        
         GameObject orb = Instantiate(orbPrefab, orbSpawnPos.position, transform.rotation);
-        StartCoroutine(handleOrb(orb.GetComponent<Rigidbody2D>(), !player.FacingLeft ? 1 : -1));
+        StartCoroutine(handleOrb(orb.GetComponent<OrbColhandler>(), !player.FacingLeft ? 1 : -1));
         // orbRB.AddForce(transform.right * arrowForce * , ForceMode2D.Impulse);
 
     }
 
-    IEnumerator handleOrb(Rigidbody2D orbRB, float launchDir){
+    IEnumerator handleOrb(OrbColhandler orb, float launchDir){
         float t = 0;
-        while(t < orbLifetime){
-            orbRB.velocity = transform.right * orbMoveSpeed * launchDir;
+        while(!orb.Exploding && t < orbLifetime){
+                    // Debug.Log(orb.Rb2D.velocity);
+
+            orb.Rb2D.velocity = transform.right * orbMoveSpeed * launchDir;
             t += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }   
-        orbRB.velocity = Vector2.zero;
-        explodeOrb(orbRB.gameObject);
+        orb.Rb2D.velocity = Vector2.zero;
+        explodeOrb(orb.gameObject);
     }
 
     public void explodeOrb(GameObject orb){

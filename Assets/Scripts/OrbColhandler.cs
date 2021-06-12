@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class OrbColhandler : MonoBehaviour
 {
+    public Rigidbody2D Rb2D {get; private set; }
     Collider2D col2D;
-    Rigidbody2D rb2D;
-    private void Start() {
+    WizMan player;
+    SpriteRenderer rend;
+    public bool Exploding {get; set; } = false;
+    private void Awake() {
         col2D = GetComponent<Collider2D>();
-        rb2D = GetComponent<Rigidbody2D>();
+        rend = GetComponent<SpriteRenderer>();
+        Rb2D = GetComponent<Rigidbody2D>();
+        // player = FindObjectOfType<WizMan>();
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        // rb2D.bodyType = RigidbodyType2D.Static;
-        // transform.parent = other.gameObject.transform;
-        // col2D.enabled = false;
-        // if (other.gameObject.CompareTag("Enemy")) {
-        //     other.gameObject.GetComponent<Baddie>().takeDamage();
-        // }
+    private void OnTriggerEnter2D(Collider2D other) {
+        Exploding = true;
     }
 }
