@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     public void loadGame() => loadScene(GAME_ID);
     
     public void loadScene(int buildIndex) => SceneManager.LoadScene(buildIndex);
+
+    public void QuitGame() => Application.Quit();
     
 
 }
