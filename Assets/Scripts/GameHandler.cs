@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameHandler : MonoBehaviour
 {
 
+    public Player player1;
     public GameObject rotatingContraption;
+    public List<GameObject> playerChoices;
     public static float currScore;
     public Animator cameraAnimator;
     public float rotSmoothness;
     private bool inTransition = false;
 
-    private readonly Vector3 DIR1 = new Vector3(0f, 0f, 0f);
-    private readonly Vector3 DIR2 = new Vector3(90f, 0f, 0f);
-    private readonly Vector3 DIR3 = new Vector3(180f, 0f, 0f);
-    private readonly Vector3 DIR4 = new Vector3(270f, 0f, 0f);
-    private Vector3 currRotation;
+    private static readonly Vector3 DIR1 = new Vector3(0f, 0f, 0f);
+    private static readonly Vector3 DIR2 = new Vector3(90f, 0f, 0f);
+    private static readonly Vector3 DIR3 = new Vector3(180f, 0f, 0f);
+    private static readonly Vector3 DIR4 = new Vector3(270f, 0f, 0f);
+    public Vector3 CurrRotation {get; private set; }
+    public UnityEvent onFlipEvent;
+    public bool GameEnd {get; private set; } = false;
     public void Start(){
         spawnNextPickup();
         //initial rotate stage? default for now
-        currRotation = DIR1;
+        CurrRotation = DIR1;
+        GameEnd = false;
     }
 
     public void increaseScore(Player player){
@@ -38,6 +44,7 @@ public class GameHandler : MonoBehaviour
     }
 
     public void onGameEnd(){
+        GameEnd = true;
         Debug.Log("You're deaded");
         //display exit/restart 
     
@@ -54,8 +61,16 @@ public class GameHandler : MonoBehaviour
     public IEnumerator OnFlipActivate(bool dir){
         // Debug.Log(rotatingContraption.transform.rotation);
         inTransition = true;
-        //pause time
+
+        //freeze AI
         //freeze player - preserve momentum
+        Rigidbody2D player1RB =  player1.GetComponent<Rigidbody2D>();
+        Vector3 velBackup = player1RB.velocity;
+        player1RB.velocity = Vector3.zero;
+
+        //Finally freeze the body in place so forces like gravity or movement won't affect it
+        player1RB.constraints = RigidbodyConstraints2D.FreezeAll;
+
         snapCameraOut();//zoom out
         
         yield return new WaitForSeconds(.5f);
@@ -64,20 +79,24 @@ public class GameHandler : MonoBehaviour
 
         snapCameraIn(); //zoom in
         //unfreeze player
+        player1RB.constraints = RigidbodyConstraints2D.None;
+        player1RB.velocity = velBackup;
+
         //resume time
         inTransition = false;
         Debug.Log("finished flip");
+        onFlipEvent?.Invoke();
         yield return null;
     }
 
     public Vector3 nextRot(bool pos){
-        if(currRotation == DIR1){
+        if(CurrRotation == DIR1){
             return pos ? DIR2 : DIR4;
-        } else if (currRotation == DIR2){
+        } else if (CurrRotation == DIR2){
             return pos ? DIR3 : DIR1;
-        } else if(currRotation == DIR3){
+        } else if(CurrRotation == DIR3){
             return pos ? DIR4 : DIR2;
-        } else if(currRotation == DIR4){
+        } else if(CurrRotation == DIR4){
             return pos ? DIR1 : DIR3;
         } else {
             return Vector3.zero;
@@ -104,19 +123,10 @@ public class GameHandler : MonoBehaviour
         // yield break;
         Vector3 endRotation = nextRot(pos);
 
-        // Debug.Log($"curr: {startRotation}");
-        // Debug.Log($"next: {endRotation}");
-
-        // Debug.Log(endRotation);
-
-        // Quaternion startRotation = rotatingContraption.transform.rotation;
-        // Vector3 goalRotVec = new Vector3(rotatingContraption.transform.rotation.eulerAngles.x + 90, rotatingContraption.transform.rotation.eulerAngles.y , rotatingContraption.transform.rotation.eulerAngles.z);
-        // Quaternion goalRotation = Quaternion.Euler(goalRotVec);
+    
         float t = 0f;
         while(t < 1){
-            // Debug.Log(initDir);
-            // Debug.Log(goalDir);
-            rotatingContraption.transform.eulerAngles = simpleLerp(currRotation, endRotation, t);
+            rotatingContraption.transform.eulerAngles = simpleLerp(CurrRotation, endRotation, t);
             // Debug.Log(simpleLerp(currRotation.eulerAngles, endRotation, t));
             // rotatingContraption.transform.e(Vector3.Lerp(transform.rotation.eulerAngles, transform.rotation.eulerAngles + Vector3.right * 90 * dir, t));
             t += Time.deltaTime * rotSmoothness;
@@ -124,7 +134,7 @@ public class GameHandler : MonoBehaviour
         }
 
         rotatingContraption.transform.eulerAngles = endRotation;
-        currRotation = endRotation;
+        CurrRotation = endRotation;
 
     }
 
