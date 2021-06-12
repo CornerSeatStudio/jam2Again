@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public int initHealth = 3;
+    public float invulnTime = 2f;
 
     [Header("Jump Settings")]
     public float jumpForce = 100f;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour {
     int Health {get; set; }
     int jumpMode;  //0 - none left, >0 - jumps left
     public bool FacingLeft {get; private set; } = false;
+    public bool Invulnerable {get; set; } = false;
     // bool Attacking {get; set; } = false;
 
     void Start() {
@@ -99,7 +101,7 @@ public class Player : MonoBehaviour {
         return hit;
     }
 
-    void takeDamage(){
+    public void takeDamage(){
         Health--;
         if(Health <= 0){
             onDeath();
@@ -107,11 +109,24 @@ public class Player : MonoBehaviour {
     }
 
     void onDeath(){
-        
-    }
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.CompareTag("Enemy")){
 
+    }
+
+    
+    IEnumerator tempInvuln(){
+        Invulnerable = true;
+        yield return new WaitForSeconds(invulnTime);
+        Invulnerable = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+
+        if(other.gameObject.CompareTag("Enemy")){
+            if(Invulnerable){
+
+            } else {
+                takeDamage();
+            }
         }
     }
 
