@@ -12,7 +12,11 @@ public class GameHandler : MonoBehaviour
     public static float currScore;
     public Animator cameraAnimator;
     public float rotSmoothness;
+
+    public List<Transform> pickupSpawnpoints;
+
     private bool inTransition = false;
+
 
     private static readonly Vector3 DIR1 = new Vector3(0f, 0f, 0f);
     private static readonly Vector3 DIR2 = new Vector3(90f, 0f, 0f);
@@ -47,6 +51,7 @@ public class GameHandler : MonoBehaviour
     void spawnNextPickup(){
         Debug.Log("spawning pickup");
 
+        //spawn orientation depends on list
     }
 
     public void onGameEnd(){
@@ -86,6 +91,7 @@ public class GameHandler : MonoBehaviour
         snapCameraIn(); //zoom in
         //unfreeze player
         player1RB.constraints = RigidbodyConstraints2D.None;
+        player1RB.constraints = RigidbodyConstraints2D.FreezeRotation;
         player1RB.velocity = velBackup;
 
         //resume time
