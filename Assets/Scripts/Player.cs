@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public AudioClip audJump;
+    public AudioClip audSwing;
     public int initHealth = 3;
 
     [Header("Jump Settings")]
@@ -77,6 +79,9 @@ public class Player : MonoBehaviour {
             // Rb2D.velocity += (new Vector2(0f, jumpForce *10) );
             // Debug.Log(Rb2D.velocity);
             Rb2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.PlayOneShot(audJump);
+
         }
 
         if(jumpMode == 0 && isGrounded()){ //temp
