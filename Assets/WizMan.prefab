@@ -196,9 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559566afea149a94791eb5b7744e857a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audJump: {fileID: 0}
+  audSwing: {fileID: 0}
   initHealth: 3
   invulnTime: 2
-  jumpForce: 50
+  jumpForce: 60
   groundCheckThreshold: 1.5
   jumpCount: 1
   maxMoveSpeed: 30
@@ -221,3 +223,4 @@ MonoBehaviour:
   orbSpawnPos: {fileID: 0}
   orbMoveSpeed: 0
   explosionRadius: 8
+  attackCooldown: 2

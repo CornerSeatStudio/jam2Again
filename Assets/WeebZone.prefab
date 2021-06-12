@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670850947984653561}
   - component: {fileID: 670850947984653558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 3rdFl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670850947989276159}
   - component: {fileID: 670850947989276156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670850949018206485}
   - component: {fileID: 670850949018206482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeebPlats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670850949293072087}
   - component: {fileID: 670850949293072084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 2ndFl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
