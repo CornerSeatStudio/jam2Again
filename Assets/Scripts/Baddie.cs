@@ -6,7 +6,7 @@ using Pathfinding;
 public class Baddie : MonoBehaviour {
     public int Health {get; set; } = 1;
     public AIPath aIPath;
-    public Animator animator;
+    Animator animator;
     public Collider2D Col {get; private set; }
 
     private void Start() {
