@@ -165,7 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initHealth: 3
+  invulnTime: 2
   jumpForce: 50
-  groundCheckThreshold: 1
+  groundCheckThreshold: 1.5
   jumpCount: 1
   maxMoveSpeed: 30
+  slopeCheckMod: 2
+  slopeDownForce: 50

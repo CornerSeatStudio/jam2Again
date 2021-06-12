@@ -28,6 +28,12 @@ public class GameHandler : MonoBehaviour
 
     }
 
+    public void onGameEnd(){
+        Debug.Log("You're deaded");
+        //display exit/restart 
+    
+    }
+
     private void Update() {
         if(!inTransition && Input.GetKeyDown(KeyCode.X)){
             StartCoroutine(OnFlipActivate());
