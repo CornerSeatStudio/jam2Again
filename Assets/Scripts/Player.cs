@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public AudioClip audJump;
-    public AudioClip audSwing;
     public int initHealth = 3;
 
     [Header("Jump Settings")]
