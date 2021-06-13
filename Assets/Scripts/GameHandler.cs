@@ -26,6 +26,12 @@ public class GameHandler : MonoBehaviour
 
     public UnityEvent postFlipEvent;
     public bool GameEnd {get; private set; } = false;
+
+    public Collider2D GREENOUTS;
+    public Collider2D WEEBOUTS;
+    public Collider2D SANDOUTS;
+    public Collider2D COMBOUTS;
+
     public void Start(){
         spawnNextPickup();
         //initial rotate stage? default for now
@@ -74,6 +80,19 @@ public class GameHandler : MonoBehaviour
             StartCoroutine(OnFlipActivate(false));
         }
     }
+
+    // bool checkIfFlippable(){
+    //     if(CurrRotation == DIR1){
+    //         return pos ? DIR2 : DIR4;
+    //     } else if (CurrRotation == DIR2){
+    //         return pos ? DIR3 : DIR1;
+    //     } else if(CurrRotation == DIR3){
+    //         return pos ? DIR4 : DIR2;
+    //     } else if(CurrRotation == DIR4){
+    //         return pos ? DIR1 : DIR3;
+    //     } 
+    // }
+
     public float zoomOutCameraSize;
     public IEnumerator OnFlipActivate(bool dir){
         // Debug.Log(rotatingContraption.transform.rotation);
