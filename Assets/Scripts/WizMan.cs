@@ -22,6 +22,8 @@ public class WizMan : MonoBehaviour {
         player = this.GetComponent<Player>();
     }
     private void Update() {
+        if(player.Health <= 0) return;
+
         if(Input.GetButtonDown("Fire1") && !cooldowning) {
             
             StartCoroutine(manageCooldown());
@@ -38,7 +40,7 @@ public class WizMan : MonoBehaviour {
     IEnumerator doAbility(){
         abilityCooldowning = true;
         player.Animator.Play(Animator.StringToHash("Ability"));
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.6f);
         conductAbility();
         yield return new WaitForSeconds(abilityCooldown);
         abilityCooldowning = false;
@@ -82,6 +84,7 @@ public class WizMan : MonoBehaviour {
             orb.Rb2D.velocity = transform.right * orbMoveSpeed * launchDir;
             t += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
+            Debug.Log("orbing");
         }   
         orb.Rb2D.velocity = Vector2.zero;
 

@@ -16,6 +16,8 @@ public class Melee : MonoBehaviour {
         player = this.GetComponent<Player>();
     }
     private void Update() {
+                if(player.Health <= 0) return;
+
         if(Input.GetButtonDown("Fire1")) conductAttack();    
         if(Input.GetButtonDown("Fire2") && !abilityCooldowning) StartCoroutine(doAbility()); 
     }

@@ -52,14 +52,14 @@ public class GameHandler : MonoBehaviour
     }
 
     void changeCharacter(Player oldPlayer){
-        Debug.Log("changing char");
+        // Debug.Log("changing char");
         //for now allow to switch to same character by chance
         
         //POOF and switcheroo
         GameObject newPlayer = Instantiate(characters[UnityEngine.Random.Range(0, characters.Count)], oldPlayer.transform.position, oldPlayer.transform.rotation);
         Player1 = newPlayer.GetComponent<Player>();
         Player1.Health = oldPlayer.Health;
-        Destroy(oldPlayer.gameObject);
+        oldPlayer.gameObject.SetActive(false);
 
     }
 
