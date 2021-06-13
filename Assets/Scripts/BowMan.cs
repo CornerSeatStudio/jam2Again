@@ -23,7 +23,7 @@ public class BowMan : MonoBehaviour {
         if(Input.GetButtonDown("Fire1") && !firing) StartCoroutine(conductAttackCo());   
 
         if(Input.GetButtonDown("Fire2") && !abilityCooldowning){
-            StartCoroutine(doAbility());
+            // StartCoroutine(doAbility());
 
         } 
     }
