@@ -1393,7 +1393,8 @@ MonoBehaviour:
   musics:
   - {fileID: 8300000, guid: 86b6dec170bffb34786b15094658d787, type: 3}
   - {fileID: 8300000, guid: 3ca4a0c7cef01fa4f8aa1070d2f1f670, type: 3}
-  - {fileID: 8300000, guid: 069440d60dc8c4b40b734dfe39801ed5, type: 3}
+  - {fileID: 8300000, guid: f5e0bb73c9ea06d48aefb66001a19e97, type: 3}
+  - {fileID: 8300000, guid: 0d0e7a29387fed14c9f634bd6905734e, type: 3}
   audioManager: {fileID: 1546411704}
 --- !u!82 &1546411706
 AudioSource:
