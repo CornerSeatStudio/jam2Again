@@ -29,6 +29,7 @@ public class Player : MonoBehaviour {
     public Animator Animator {get; private set; }
     public SpriteRenderer sprenderer {get; private set; }
     public GameHandler gameHandler {get; private set; }
+    public ControlManager controlManager {get; private set; }
 
     //other
     public int Health {get; set; }
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour {
         Animator =  GetComponent<Animator>();
         sprenderer = GetComponent<SpriteRenderer>();
         gameHandler = FindObjectOfType<GameHandler>();
-
+        controlManager = gameHandler.GetComponent<ControlManager>();
         Health = initHealth;
         jumpMode = jumpCount;
     }
