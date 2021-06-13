@@ -190,8 +190,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audArrow: {fileID: 8300000, guid: 10992e5caa78b4348970772e74db75ef, type: 3}
   arrowForce: 500
+  grenadeForce: 15
+  grenadeRadius: 30
   arrowPrefab: {fileID: 4280031618453610032, guid: aebe4234b7e03f14791d1a0a31007ee2, type: 3}
+  grenadePrefab: {fileID: 1725554707871358236, guid: 1e0a663a50e585848aea71dadfefae5b, type: 3}
   arrowSpawn: {fileID: 1484856351611427569}
+  abilityCooldown: 5
 --- !u!82 &2129700670019570267
 AudioSource:
   m_ObjectHideFlags: 0

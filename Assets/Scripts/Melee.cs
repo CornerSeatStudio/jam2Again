@@ -8,7 +8,8 @@ public class Melee : MonoBehaviour {
     public AudioClip audAbility;
     Player player;
     public float meleeRange = 8f; 
-    public float abilityCooldown = 5f;
+    public float dashDistance = 5f;
+    public float abilityCooldown = 3f;
 
     bool abilityCooldowning = false;
 
@@ -16,20 +17,45 @@ public class Melee : MonoBehaviour {
         player = this.GetComponent<Player>();
     }
     private void Update() {
+                if(player.Health <= 0) return;
+
         if(Input.GetButtonDown("Fire1")) conductAttack();    
         if(Input.GetButtonDown("Fire2") && !abilityCooldowning) StartCoroutine(doAbility()); 
     }
 
     IEnumerator doAbility(){
         abilityCooldowning = true;
-        player.Animator.SetTrigger(Animator.StringToHash("Ability"));
+        player.Animator.Play(Animator.StringToHash("Ability"));
         AudioSource audio = GetComponent<AudioSource>();
         audio.PlayOneShot(audAbility);
+   
         player.Invulnerable = true;
+        
+        yield return new WaitForSeconds(.2f);
+
+
         player.Col.enabled = false;
 
         
 
+        Vector3 initPos = transform.position;
+        Vector3 goalPos = transform.position + transform.right * dashDistance * (transform.localScale.x > 0 ? 1 : -1);
+
+        float t = 0;
+        while(t < 1){
+            player.Rb2D.MovePosition(Vector3.Lerp(initPos, goalPos, t));
+            t += Time.fixedDeltaTime * 3f;
+
+            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 5f, ~LayerMask.GetMask("Player"));
+        // Debug.DrawLine(transform.position, transform.position + transform.right * meleeRange, Color.red);
+            foreach(Collider2D col in cols){
+                if(col.GetComponent<Baddie>()){
+                    col.GetComponent<Baddie>().takeDamage();
+                }
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
 
         player.Col.enabled = true;
         player.Invulnerable = false;

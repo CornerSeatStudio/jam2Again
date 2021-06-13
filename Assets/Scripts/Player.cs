@@ -177,21 +177,22 @@ public class Player : MonoBehaviour {
     IEnumerator tempIgnoreCollision(Collision2D other){
         Physics2D.IgnoreCollision(other.collider, Col);
         yield return new WaitForSeconds(invulnTime);
+        Debug.Log("COLLISION PLEASE FIX");
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-
+        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        yield return null;
 
     }
     private void OnCollisionEnter2D(Collision2D other) {

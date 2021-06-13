@@ -20,6 +20,9 @@ public class BowMan : MonoBehaviour {
         player = this.GetComponent<Player>();
     }
     private void Update() {
+
+                if(player.Health <= 0) return;
+
         if(Input.GetButtonDown("Fire1") && !firing) StartCoroutine(conductAttackCo());   
 
         if(Input.GetButtonDown("Fire2") && !abilityCooldowning){
@@ -30,7 +33,7 @@ public class BowMan : MonoBehaviour {
 
     IEnumerator doAbility(){
         abilityCooldowning = true;
-        player.Animator.SetTrigger(Animator.StringToHash("Ability"));
+        player.Animator.Play(Animator.StringToHash("Ability"));
         yield return new WaitForSeconds(.2f);
         conductAbility();
         yield return new WaitForSeconds(abilityCooldown);

@@ -188,9 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audSwing: {fileID: 8300000, guid: 38337d9f8c822d34580478b278fc6666, type: 3}
-  audAbility: {fileID: 8300000, guid: 05cc4d0d924cbd746b70df4aca4c132b, type: 3}
   meleeRange: 6
-  abilityCooldown: 5
+  dashDistance: 50
+  abilityCooldown: 3
 --- !u!82 &-8114486130655340633
 AudioSource:
   m_ObjectHideFlags: 0
