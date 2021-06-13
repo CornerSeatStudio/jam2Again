@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.Events;
+using System;
 
 public class Baddie : MonoBehaviour {
     public int Health {get; set; } = 1;
     public AIPath aIPath;
     Animator animator;
     public Collider2D Col {get; private set; }
+
+    public event Action<Baddie> onDeathEvent;     
 
     private void Start() {
         aIPath = this.GetComponent<AIPath>();
@@ -27,6 +31,7 @@ public class Baddie : MonoBehaviour {
     }
 
     void onDeath(){
+        onDeathEvent?.Invoke(this);
         Col.enabled = false;
         Debug.Log("baddie died");
         //stop moving

@@ -174,7 +174,7 @@ public class Player : MonoBehaviour {
         if(other.gameObject.CompareTag("Enemy") && !Invulnerable){
             takeDamage();
             StartCoroutine(tempIgnoreCollision(other));
-            Debug.Log("perhaps");
+            // Debug.Log("perhaps");
         }
     }
 

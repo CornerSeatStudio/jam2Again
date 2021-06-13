@@ -17,13 +17,14 @@ public class GameHandler : MonoBehaviour
 
     private bool inTransition = false;
 
-
     private static readonly Vector3 DIR1 = new Vector3(0f, 0f, 0f);
     private static readonly Vector3 DIR2 = new Vector3(90f, 0f, 0f);
     private static readonly Vector3 DIR3 = new Vector3(180f, 0f, 0f);
     private static readonly Vector3 DIR4 = new Vector3(270f, 0f, 0f);
     public Vector3 CurrRotation {get; private set; }
-    public UnityEvent onFlipEvent;
+    public UnityEvent preFlipEvent;
+
+    public UnityEvent postFlipEvent;
     public bool GameEnd {get; private set; } = false;
     public void Start(){
         spawnNextPickup();
@@ -52,6 +53,7 @@ public class GameHandler : MonoBehaviour
         Debug.Log("spawning pickup");
 
         //spawn orientation depends on list
+
     }
 
     public void onGameEnd(){
@@ -73,7 +75,8 @@ public class GameHandler : MonoBehaviour
         // Debug.Log(rotatingContraption.transform.rotation);
         inTransition = true;
 
-        //freeze AI
+        preFlipEvent?.Invoke(); //freeze AI
+        
         //freeze player - preserve momentum
         Rigidbody2D player1RB =  player1.GetComponent<Rigidbody2D>();
         Vector3 velBackup = player1RB.velocity;
@@ -94,10 +97,11 @@ public class GameHandler : MonoBehaviour
         player1RB.constraints = RigidbodyConstraints2D.FreezeRotation;
         player1RB.velocity = velBackup;
 
+        postFlipEvent?.Invoke();
+
         //resume time
         inTransition = false;
         Debug.Log("finished flip");
-        onFlipEvent?.Invoke();
         yield return null;
     }
 
