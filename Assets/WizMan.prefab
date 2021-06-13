@@ -223,5 +223,5 @@ MonoBehaviour:
   orbPrefab: {fileID: 997238729962857615, guid: a77cdca776e147646960bc40eb69ff5b, type: 3}
   orbSpawnPos: {fileID: 1628418629948123622}
   orbMoveSpeed: 15
-  explosionRadius: 20
+  explosionRadius: 65
   attackCooldown: 2

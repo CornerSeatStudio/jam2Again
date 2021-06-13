@@ -84,9 +84,10 @@ public class EnemySpawnHandling : MonoBehaviour
         // Debug.Log("sdf");
         foreach(Baddie bd in activeBaddies){
             if(bd == null) break;
+            bd.transform.parent = null;  
             bd.GetComponent<AIPath>().canMove = true;    
             bd.GetComponent<AIPath>().canSearch = true;
-            bd.transform.parent = null;  
+            // bd.GetComponent<AIPath>().
         }
     }
 }

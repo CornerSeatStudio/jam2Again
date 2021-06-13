@@ -26,7 +26,7 @@ public class RangedBaddie : Baddie {
     }
 
     public bool checkAttackPosition(){
-        if (Physics2D.Raycast(this.transform.position, player.transform.position, (float)atkDistance)){
+        if (Physics2D.Raycast(this.transform.position, gameHandler.player1.transform.position, (float)atkDistance)){
             return true;
         } else {
             return false;
@@ -52,7 +52,7 @@ public class RangedBaddie : Baddie {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.Euler(new Vector3(rot.x,rot.y+ (left ? 180 : 0),rot.z)));
         Destroy(bullet, 5f);
         Rigidbody2D bulletB = bullet.GetComponent<Rigidbody2D>();
-        bulletB.AddForce((player.transform.position - this.transform.position) * bulletForce);
+        bulletB.AddForce((gameHandler.player1.transform.position - this.transform.position) * bulletForce);
         AudioSource audio = GetComponent<AudioSource>();
 
     }
