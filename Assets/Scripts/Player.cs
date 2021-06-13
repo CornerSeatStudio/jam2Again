@@ -177,8 +177,12 @@ public class Player : MonoBehaviour {
     IEnumerator tempIgnoreCollision(Collision2D other){
         Physics2D.IgnoreCollision(other.collider, Col);
         yield return new WaitForSeconds(invulnTime);
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - maybe just kill the bastard at touch
-        // Debug.Log("iddsfk");
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+
 
     }
     private void OnCollisionEnter2D(Collision2D other) {

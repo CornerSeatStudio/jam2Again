@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class GameHandler : MonoBehaviour
 {
 
-    public Player player1;
+    public Player Player1 {get; private set; }
     public GameObject rotatingContraption;
     public List<GameObject> characters;
     public static float currScore;
@@ -16,7 +16,7 @@ public class GameHandler : MonoBehaviour
     public GameObject pickup;
     public List<Transform> pickupSpawnpoints;
     public GameObject portalPrefab;
-
+    public Transform playerSpawnPos1;
     private bool inTransition = false;
 
     private static readonly Vector3 DIR1 = new Vector3(0f, 0f, 0f);
@@ -33,6 +33,10 @@ public class GameHandler : MonoBehaviour
 
     public void Start(){
         spawnNextPickup();
+
+        //spawn player(s) and link them to the target
+        GameObject newPlayer = Instantiate(characters[UnityEngine.Random.Range(0, characters.Count)], playerSpawnPos1.position, playerSpawnPos1.rotation);
+        Player1 = newPlayer.GetComponent<Player>();
         //initial rotate stage? default for now
         CurrRotation = DIR1;
         GameEnd = false;
@@ -51,8 +55,8 @@ public class GameHandler : MonoBehaviour
         
         //POOF and switcheroo
         GameObject newPlayer = Instantiate(characters[UnityEngine.Random.Range(0, characters.Count)], oldPlayer.transform.position, oldPlayer.transform.rotation);
-        player1 = newPlayer.GetComponent<Player>();
-        player1.Health = oldPlayer.Health;
+        Player1 = newPlayer.GetComponent<Player>();
+        Player1.Health = oldPlayer.Health;
         Destroy(oldPlayer.gameObject);
 
     }
@@ -101,7 +105,7 @@ public class GameHandler : MonoBehaviour
         preFlipEvent?.Invoke(); //freeze AI
         
         //freeze player - preserve momentum
-        Rigidbody2D player1RB =  player1.GetComponent<Rigidbody2D>();
+        Rigidbody2D player1RB =  Player1.GetComponent<Rigidbody2D>();
         Vector3 velBackup = player1RB.velocity;
         player1RB.velocity = Vector3.zero;
 

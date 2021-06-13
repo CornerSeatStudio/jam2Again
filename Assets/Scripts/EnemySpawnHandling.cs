@@ -58,7 +58,7 @@ public class EnemySpawnHandling : MonoBehaviour
             GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPosition, transform.rotation);
             Baddie temp = go.GetComponent<Baddie>();
             temp.onDeathEvent += deathHandlingSubscriber;
-            go.GetComponent<AIDestinationSetter>().target = gameHandler.player1.transform; //temp if we want coop
+            go.GetComponent<AIDestinationSetter>().target = gameHandler.Player1.transform; //temp if we want coop
             activeBaddies.Add(temp);
 
             yield return new WaitForSeconds(1f);

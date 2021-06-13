@@ -34,7 +34,7 @@ public class Baddie : MonoBehaviour {
 
     IEnumerator TargetUpdater(){
         while(true){
-            destSetter.target = gameHandler.player1.transform;
+            destSetter.target = gameHandler.Player1.transform;
             yield return new WaitForSeconds(1f);
         }
     }
