@@ -831,7 +831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955189735}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: -5.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2721,11 +2721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 245970226999246009, guid: 0f3f96b0472595742b81474b5e36566a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -78
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 245970226999246009, guid: 0f3f96b0472595742b81474b5e36566a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.8
+      value: 49.9
       objectReference: {fileID: 0}
     - target: {fileID: 245970226999246009, guid: 0f3f96b0472595742b81474b5e36566a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2850,7 +2850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367697047335524916, guid: 6b1e481cbb53e874f96ffbd83182d78b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4367697047335524917, guid: 6b1e481cbb53e874f96ffbd83182d78b, type: 3}
       propertyPath: audJump
@@ -3133,7 +3133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3027654041839870056, guid: a33f91ea5e78ace4e9affc3fc0d80f67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3027654041839870056, guid: a33f91ea5e78ace4e9affc3fc0d80f67, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3177,7 +3177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3027654041839870061, guid: a33f91ea5e78ace4e9affc3fc0d80f67, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3027654041839870061, guid: a33f91ea5e78ace4e9affc3fc0d80f67, type: 3}
       propertyPath: m_TagString
