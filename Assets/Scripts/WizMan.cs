@@ -22,21 +22,26 @@ public class WizMan : MonoBehaviour {
     }
     private void Update() {
         if(Input.GetButtonDown("Fire1") && !cooldowning) {
-            conductAttack();   
+            
             StartCoroutine(manageCooldown());
         } 
     }
 
     IEnumerator manageCooldown(){
         cooldowning = true;
+        player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
+        AudioSource audio = GetComponent<AudioSource>();
+        // audio.PlayOneShot(audCast); FIX THIS FUCKING SHIT
+        yield return new WaitForSeconds(.3f);
+        conductAttack();   
         yield return new WaitForSeconds(attackCooldown);
         cooldowning = false;
     }
 
     void conductAttack(){
-        player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
-        AudioSource audio = GetComponent<AudioSource>();
-        // audio.PlayOneShot(audCast); FIX THIS FUCKING SHIT
+
+
+
         GameObject orb = Instantiate(orbPrefab, orbSpawnPos.position, transform.rotation);
         StartCoroutine(handleOrb(orb.GetComponent<OrbColhandler>(), !player.FacingLeft ? 1 : -1));
         // orbRB.AddForce(transform.right * arrowForce * , ForceMode2D.Impulse);

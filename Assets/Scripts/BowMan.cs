@@ -10,18 +10,21 @@ public class BowMan : MonoBehaviour {
     Player player;
     public GameObject arrowPrefab;
     public Transform arrowSpawn;
+    bool firing = false;
     private void Start() {
         player = this.GetComponent<Player>();
     }
     private void Update() {
-        if(Input.GetButtonDown("Fire1")) conductAttack();    
+        if(Input.GetButtonDown("Fire1") && !firing) StartCoroutine(conductAttackCo());    
     }
 
     void conductAttack(){
-        player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
        
+        
+
         //todo: do rotation
          Vector3 rot = transform.rotation.eulerAngles;
+        
         
         GameObject arrow = Instantiate(arrowPrefab, arrowSpawn.position, Quaternion.Euler(new Vector3(rot.x,rot.y+ (player.FacingLeft ? 180 : 0),rot.z)));
         Destroy(arrow, 5f);
@@ -30,6 +33,15 @@ public class BowMan : MonoBehaviour {
         AudioSource audio = GetComponent<AudioSource>();
         audio.PlayOneShot(audArrow);
     
-
     }
+
+    IEnumerator conductAttackCo(){
+        firing = true;
+        player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
+        yield return new WaitForSeconds(.3f);
+        conductAttack();
+        firing = false;
+    }
+
+    void delay(){}
 }
