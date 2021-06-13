@@ -31,7 +31,7 @@ public class WizMan : MonoBehaviour {
         cooldowning = true;
         player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
         AudioSource audio = GetComponent<AudioSource>();
-        // audio.PlayOneShot(audCast); FIX THIS FUCKING SHIT
+        audio.PlayOneShot(audCast);
         yield return new WaitForSeconds(.3f);
         conductAttack();   
         yield return new WaitForSeconds(attackCooldown);
@@ -64,7 +64,7 @@ public class WizMan : MonoBehaviour {
 
     public void explodeOrb(GameObject orb){
         AudioSource audio = GetComponent<AudioSource>();
-        // audio.PlayOneShot(audExplod);
+        audio.PlayOneShot(audExplod);
         orb.GetComponent<Animator>().SetTrigger("Blow");
 
         Collider2D[] cols = Physics2D.OverlapCircleAll(orb.transform.position, explosionRadius);

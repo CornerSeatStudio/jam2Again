@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559566afea149a94791eb5b7744e857a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audJump: {fileID: 0}
+  audJump: {fileID: 8300000, guid: 5250290811bf7944a882fd2765bdf70e, type: 3}
   initHealth: 2
   invulnTime: 2
   jumpForce: 80
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fe2cd5ea6a4554c94b7778b2323585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audArrow: {fileID: 0}
+  audArrow: {fileID: 8300000, guid: 3cf57dbde785f4d4ba85f38d34a49e2e, type: 3}
   arrowForce: 500
   arrowPrefab: {fileID: 4280031618453610032, guid: aebe4234b7e03f14791d1a0a31007ee2, type: 3}
   arrowSpawn: {fileID: 1484856351611427569}

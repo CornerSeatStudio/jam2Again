@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559566afea149a94791eb5b7744e857a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audJump: {fileID: 0}
+  audJump: {fileID: 8300000, guid: 5250290811bf7944a882fd2765bdf70e, type: 3}
   initHealth: 2
   invulnTime: 2
   jumpForce: 80
@@ -186,5 +186,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 321a500b3b8f3cc47b74a3f717785a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audSwing: {fileID: 0}
+  audSwing: {fileID: 8300000, guid: 38337d9f8c822d34580478b278fc6666, type: 3}
   meleeRange: 6
