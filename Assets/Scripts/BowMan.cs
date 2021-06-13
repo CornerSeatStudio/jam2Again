@@ -63,13 +63,14 @@ public class BowMan : MonoBehaviour {
         grenadeRB.AddForce(transform.right * grenadeForce * (transform.localScale.x > 0 ? 1 : -1), ForceMode2D.Impulse);
         gameHandler.StartCoroutine(tickerNade(grenade));
         AudioSource audio = GetComponent<AudioSource>();
+        //grenade chcuking sound todo
     }
 
     IEnumerator tickerNade(GameObject grenade){
         yield return new WaitForSeconds(3f);
 
         grenade.GetComponent<Animator>().Play("explode");
-        AudioSource audio = GetComponent<AudioSource>();
+        AudioSource audio = grenade.GetComponent<AudioSource>();
         audio.PlayOneShot(audDynamit);
         Collider2D[] cols = Physics2D.OverlapCircleAll(grenade.transform.position, grenadeRadius);
         foreach(Collider2D col in cols){
