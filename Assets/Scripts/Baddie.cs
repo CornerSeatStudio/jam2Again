@@ -25,6 +25,22 @@ public class Baddie : MonoBehaviour {
         Health--;
         if(Health <= 0) onDeath();
     }
+    
+    public void attack(){
+        // THis is supposed to be a placeholder for a physical attack
+        Debug.Log("Player attacked");
+        
+    }
+
+    bool checkAttackPosition(){
+        if (Vector2.Distance(player.transform.position, this.transform.position) < atkDistance){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    
 
     void onDeath(){
         Col.enabled = false;
