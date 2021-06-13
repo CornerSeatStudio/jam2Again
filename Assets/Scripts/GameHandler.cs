@@ -29,6 +29,8 @@ public class GameHandler : MonoBehaviour
     public UnityEvent postFlipEvent;
     public event Action<int> onPickupEvent;
     public bool GameEnd {get; private set; } = false;
+    public GameObject pauseMenu;
+    public GameObject deathMenu;
 
 
     public void Start(){
@@ -72,7 +74,7 @@ public class GameHandler : MonoBehaviour
 
     public void onGameEnd(){
         GameEnd = true;
-        Debug.Log("You're deaded");
+        deathMenu.SetActive(true);
         //display exit/restart 
     
     }
@@ -83,19 +85,29 @@ public class GameHandler : MonoBehaviour
         } else if(!inTransition && Input.GetKeyDown(KeyCode.Z)){
             StartCoroutine(OnFlipActivate(false));
         }
+
+        if(Input.GetKeyDown(KeyCode.P)) {
+            if(paused){
+                resumeGame();
+            } else {
+                pauseGame();
+            }
+        };
+
+    }
+    bool paused = false;
+    void pauseGame(){
+        paused = true;
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 
-    // bool checkIfFlippable(){
-    //     if(CurrRotation == DIR1){
-    //         return pos ? DIR2 : DIR4;
-    //     } else if (CurrRotation == DIR2){
-    //         return pos ? DIR3 : DIR1;
-    //     } else if(CurrRotation == DIR3){
-    //         return pos ? DIR4 : DIR2;
-    //     } else if(CurrRotation == DIR4){
-    //         return pos ? DIR1 : DIR3;
-    //     } 
-    // }
+    void resumeGame(){
+        paused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+
+    }
 
     public float zoomOutCameraSize;
     public IEnumerator OnFlipActivate(bool dir){

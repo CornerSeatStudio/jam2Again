@@ -427,7 +427,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1676794715}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: loadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2712,6 +2712,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1776432673209825839, guid: d41acc69d67aacd45b8f6c0eae454d90, type: 3}
   m_PrefabInstance: {fileID: 1676794714}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1676794718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776432674188460386, guid: d41acc69d67aacd45b8f6c0eae454d90, type: 3}
+  m_PrefabInstance: {fileID: 1676794714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1760622180 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2763933734763162442, guid: 47296f430ebe930498bf1c7efaa49a10, type: 3}
@@ -3659,6 +3664,14 @@ PrefabInstance:
       propertyPath: player1
       value: 
       objectReference: {fileID: 5584795}
+    - target: {fileID: 1853964081486069759, guid: 416693e482640e84eaf856a05bd26580, type: 3}
+      propertyPath: deathMenu
+      value: 
+      objectReference: {fileID: 973351600}
+    - target: {fileID: 1853964081486069759, guid: 416693e482640e84eaf856a05bd26580, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1676794718}
     - target: {fileID: 1853964081486069759, guid: 416693e482640e84eaf856a05bd26580, type: 3}
       propertyPath: portalPrefab
       value: 

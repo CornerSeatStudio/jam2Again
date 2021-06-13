@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 1751033359701341628}
   - component: {fileID: 1751033359701341629}
   - component: {fileID: 1751033359701341630}
-  - component: {fileID: 1751033359701341626}
   m_Layer: 5
   m_Name: scoreDisplay
   m_TagString: Untagged
@@ -137,19 +136,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1751033359701341626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751033359701341631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d8067755a6e7914c9575adc7f9db663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
 --- !u!1 &5547910222562855512
 GameObject:
   m_ObjectHideFlags: 0

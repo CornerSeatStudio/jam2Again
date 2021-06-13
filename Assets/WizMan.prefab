@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audJump: {fileID: 0}
-  initHealth: 3
+  initHealth: 2
   invulnTime: 2
   jumpForce: 80
   groundCheckThreshold: 1.5

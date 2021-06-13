@@ -182,6 +182,15 @@ public class Player : MonoBehaviour {
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
         Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
 
 
     }

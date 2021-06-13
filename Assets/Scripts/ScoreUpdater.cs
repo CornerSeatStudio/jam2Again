@@ -18,5 +18,6 @@ public class ScoreUpdater : MonoBehaviour
     // Update is called once per frame
     public void onScoreUpdate(int newScore){
         score.text = newScore.ToString();
+        Debug.Log("YEWOT");
     }
 }
