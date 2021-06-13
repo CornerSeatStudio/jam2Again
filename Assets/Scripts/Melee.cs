@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Melee : MonoBehaviour {
     public AudioClip audSwing;
     public AudioClip audAbility;
+    public AudioClip audContact;
     Player player;
     public float meleeRange = 8f; 
     public float dashDistance = 5f;
@@ -64,7 +65,7 @@ public class Melee : MonoBehaviour {
         
 
         Vector3 initPos = transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position,  transform.right * (transform.localScale.x > 0 ? 1 : -1), dashDistance);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position,  transform.right * (transform.localScale.x > 0 ? 1 : -1), dashDistance, ~LayerMask.GetMask("Baddie"));
         Vector3 goalPos = hit ? new Vector3(hit.point.x, hit.point.y, 0) : transform.position + transform.right * dashDistance * (transform.localScale.x > 0 ? 1 : -1);
 
         float t = 0;
@@ -73,8 +74,10 @@ public class Melee : MonoBehaviour {
             t += Time.fixedDeltaTime * 3f;
 
             Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 6f, ~LayerMask.GetMask("Player"));
+            
             foreach(Collider2D col in cols){
                 if(col.GetComponent<Baddie>()){
+                    audio.PlayOneShot(audContact);
                     col.GetComponent<Baddie>().takeDamage();
                 }
             }
@@ -97,6 +100,8 @@ public class Melee : MonoBehaviour {
         // Debug.DrawLine(transform.position, transform.position + transform.right * meleeRange, Color.red);
         foreach(Collider2D col in cols){
             if(col.GetComponent<Baddie>()){
+                audio.PlayOneShot(audContact);
+
                 col.GetComponent<Baddie>().takeDamage();
             }
         }

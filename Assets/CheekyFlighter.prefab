@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6351466728480505743}
   - component: {fileID: 6351466728480505739}
   - component: {fileID: 7564123887252551569}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CheekyFlighter
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -6,6 +6,8 @@ public class ArrowColHandler : MonoBehaviour
 {
     Collider2D col2D;
     Rigidbody2D rb2D;
+         public AudioClip bulletContact;
+
     private void Start() {
         col2D = GetComponent<Collider2D>();
         rb2D = GetComponent<Rigidbody2D>();
@@ -19,6 +21,8 @@ public class ArrowColHandler : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy")) {
             other.gameObject.GetComponent<Baddie>().takeDamage();
+                    GetComponent<AudioSource>().PlayOneShot(bulletContact);
+
             // Destroy(this.gameObject);
         } 
     }

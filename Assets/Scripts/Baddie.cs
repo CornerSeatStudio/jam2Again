@@ -66,7 +66,7 @@ public class Baddie : MonoBehaviour {
         //play sound
         //disintegrate/explode
         animator.SetTrigger(Animator.StringToHash("Dead"));
-        Destroy(this.gameObject, 3f);
+        Destroy(this.gameObject, 1.5f);
         AudioSource audio = GetComponent<AudioSource>();
         audio.PlayOneShot(audEnemyDeath);
     }

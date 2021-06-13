@@ -191,6 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audSwing: {fileID: 8300000, guid: 38337d9f8c822d34580478b278fc6666, type: 3}
   audAbility: {fileID: 8300000, guid: 05cc4d0d924cbd746b70df4aca4c132b, type: 3}
+  audContact: {fileID: 8300000, guid: c417101bdf0c5524d807ce7f680face1, type: 3}
   meleeRange: 6
   dashDistance: 50
   abilityCooldown: 3

@@ -67,7 +67,7 @@ public class BowMan : MonoBehaviour {
     }
 
     IEnumerator tickerNade(GameObject grenade){
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
 
         grenade.GetComponent<Animator>().Play("explode");
         AudioSource audio = grenade.GetComponent<AudioSource>();
