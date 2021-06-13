@@ -72,7 +72,7 @@ public class Melee : MonoBehaviour {
             player.Rb2D.MovePosition(Vector3.Lerp(initPos, goalPos, t));
             t += Time.fixedDeltaTime * 3f;
 
-            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 5f, ~LayerMask.GetMask("Player"));
+            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 6f, ~LayerMask.GetMask("Player"));
             foreach(Collider2D col in cols){
                 if(col.GetComponent<Baddie>()){
                     col.GetComponent<Baddie>().takeDamage();

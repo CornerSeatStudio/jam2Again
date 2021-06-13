@@ -12,7 +12,7 @@ public class EnemySpawnHandling : MonoBehaviour
     public List<Transform> spawnpoints;
     public List<GameObject> enemies;
     public float spawnsPerSecStart;
-    public float spwansPerSecCap = 1;
+    public float spwansPerSecCap = .5f;
     public float SpawnsPerSec {get; private set; }
     public level thisLevel;
     public static Dictionary<level, float> orientationMapping = new Dictionary<level, float>(){
@@ -40,6 +40,7 @@ public class EnemySpawnHandling : MonoBehaviour
         isActive = orientationMapping[thisLevel] == gameHandler.CurrRotation.x;
         // Debug.Log(orientationMapping[thisLevel]);
         // Debug.Log(gameHandler.CurrRotation.x);
+        SpawnsPerSec = spawnsPerSecStart;
         if(isActive) reanimateOutPlane();
     }
 
@@ -70,7 +71,7 @@ public class EnemySpawnHandling : MonoBehaviour
             Destroy(portal, 1f);    
 
             yield return new WaitForSeconds(SpawnsPerSec);
-            SpawnsPerSec = Mathf.Max(SpawnsPerSec - .02f, spwansPerSecCap);
+            SpawnsPerSec = Mathf.Max(SpawnsPerSec - .4f, spwansPerSecCap);
         }
         yield break;
     }
