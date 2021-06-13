@@ -10,6 +10,7 @@ public class Pickups : MonoBehaviour
 
     private void Start() {
         col2D = GetComponent<Collider2D>();
+        gameHandler = FindObjectOfType<GameHandler>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

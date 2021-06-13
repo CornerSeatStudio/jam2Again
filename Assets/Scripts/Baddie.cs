@@ -7,13 +7,14 @@ using System;
 
 public class Baddie : MonoBehaviour {
     public int Health {get; set; } = 1;
-    public AIPath aIPath;
+    protected AIPath aIPath;
     public Collider2D Col {get; private set; }
-    public Animator animator;
+    protected Animator animator;
     public double atkDistance;
     public double coolDown;
     public double NextAttack;
-    public MonoBehaviour player;
+    
+    protected GameHandler gameHandler;
 
     public event Action<Baddie> onDeathEvent;     
 
@@ -21,7 +22,8 @@ public class Baddie : MonoBehaviour {
         aIPath = this.GetComponent<AIPath>();
         Col = this.GetComponent<Collider2D>();
         animator = this.GetComponent<Animator>();
-        
+        gameHandler = FindObjectOfType<GameHandler>();
+
         NextAttack = Time.time;
         atkDistance = 10;
         coolDown = 5;

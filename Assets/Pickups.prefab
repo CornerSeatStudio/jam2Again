@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 245970226999246010}
   - component: {fileID: 245970226999246011}
   - component: {fileID: 245970226999246012}
+  - component: {fileID: 3411021556382381784}
   m_Layer: 0
   m_Name: Pickups
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245970226999246013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.8, y: -1.1, z: -37.91552}
+  m_LocalPosition: {x: -26.8, y: -1.1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,10 +84,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -465590367
-  m_SortingLayer: 5
+  m_SortingLayerID: -431408881
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 53686aae2bb8906499d792d7bcae5fee, type: 3}
+  m_Sprite: {fileID: 7675826601332790545, guid: 003b8bb3e063c4b428c7d96610fa148a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +115,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.8, y: 6.4}
+    oldSize: {x: 8, y: 8}
     newSize: {x: 4.8, y: 6.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -123,3 +124,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.8, y: 6.4}
   m_EdgeRadius: 0
+--- !u!95 &3411021556382381784
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245970226999246013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8dab20facc1a1ec4a82948f3b93bd515, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

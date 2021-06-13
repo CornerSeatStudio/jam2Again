@@ -12,7 +12,7 @@ public class GameHandler : MonoBehaviour
     public static float currScore;
     public Animator cameraAnimator;
     public float rotSmoothness;
-
+    public GameObject pickup;
     public List<Transform> pickupSpawnpoints;
 
     private bool inTransition = false;
@@ -21,11 +21,17 @@ public class GameHandler : MonoBehaviour
     private static readonly Vector3 DIR2 = new Vector3(90f, 0f, 0f);
     private static readonly Vector3 DIR3 = new Vector3(180f, 0f, 0f);
     private static readonly Vector3 DIR4 = new Vector3(270f, 0f, 0f);
-    public Vector3 CurrRotation {get; private set; }
+    public Vector3 CurrRotation {get; private set;}
     public UnityEvent preFlipEvent;
 
     public UnityEvent postFlipEvent;
     public bool GameEnd {get; private set; } = false;
+
+    public Collider2D GREENOUTS;
+    public Collider2D WEEBOUTS;
+    public Collider2D SANDOUTS;
+    public Collider2D COMBOUTS;
+
     public void Start(){
         spawnNextPickup();
         //initial rotate stage? default for now
@@ -55,6 +61,8 @@ public class GameHandler : MonoBehaviour
         Debug.Log("spawning pickup");
 
         //spawn orientation depends on list
+        Transform toSpawn = pickupSpawnpoints[Random.Range(0, pickupSpawnpoints.Count)];
+        Instantiate(pickup, toSpawn.position, toSpawn.rotation);
 
     }
 
@@ -72,6 +80,19 @@ public class GameHandler : MonoBehaviour
             StartCoroutine(OnFlipActivate(false));
         }
     }
+
+    // bool checkIfFlippable(){
+    //     if(CurrRotation == DIR1){
+    //         return pos ? DIR2 : DIR4;
+    //     } else if (CurrRotation == DIR2){
+    //         return pos ? DIR3 : DIR1;
+    //     } else if(CurrRotation == DIR3){
+    //         return pos ? DIR4 : DIR2;
+    //     } else if(CurrRotation == DIR4){
+    //         return pos ? DIR1 : DIR3;
+    //     } 
+    // }
+
     public float zoomOutCameraSize;
     public IEnumerator OnFlipActivate(bool dir){
         // Debug.Log(rotatingContraption.transform.rotation);
