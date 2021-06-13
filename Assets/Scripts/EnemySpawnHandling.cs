@@ -42,43 +42,49 @@ public class EnemySpawnHandling : MonoBehaviour
 
     IEnumerator spawnHandling(){
         while(!gameHandler.GameEnd){
-            if(!isActive) continue;
+            if(!isActive) {
+                yield return new WaitForSeconds(SpawnsPerSec);
+                continue;
+            }
             //spawn an AI 
             GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnpoints[Random.Range(0, spawnpoints.Count)].position, transform.rotation);
             Baddie temp = go.GetComponent<Baddie>();
             temp.onDeathEvent += deathHandlingSubscriber;
             go.GetComponent<AIDestinationSetter>().target = gameHandler.player1.transform; //temp if we want coop
-            // activeBaddies.Add(temp);
+            activeBaddies.Add(temp);
             yield return new WaitForSeconds(SpawnsPerSec);
         }
         yield break;
     }
 
     public void deathHandlingSubscriber(Baddie deadBloke){
-        // activeBaddies.Remove(deadBloke);
+        activeBaddies.Remove(deadBloke);
     }
 
     
     public void flattenIntoPlaneSubscriber(){
         Debug.Log("OSDFJ");
-        // if(isActive) { //if we're flattening this plane specifically
-        //     isActive = false;
-        //     foreach(Baddie bd in activeBaddies){
-        //         Debug.Log(bd.name);
-        //         // bd.GetComponent<AIPath>().;
-        //         // bd.transform.parent = levelObject.transform;
+        if(isActive) { //if we're flattening this plane specifically
+            isActive = false;
+            foreach(Baddie bd in activeBaddies){
+                // Debug.Log(bd.name);
+                bd.GetComponent<AIPath>().canMove = false;
+                bd.GetComponent<AIPath>().canSearch = false;
+
+                bd.transform.parent = levelObject.transform;
                 
-        //     }
-        // }
+            }
+        }
         // Debug.Log("idk");
     }
 
     void reanimateOutPlane(){
         // Debug.Log("sdf");
-        // foreach(Baddie bd in activeBaddies){
-        //     if(bd == null) break;
-        //     bd.GetComponent<AIPath>().canMove = true;    
-        //     bd.transform.parent = null;  
-        // }
+        foreach(Baddie bd in activeBaddies){
+            if(bd == null) break;
+            bd.GetComponent<AIPath>().canMove = true;    
+            bd.GetComponent<AIPath>().canSearch = true;
+            bd.transform.parent = null;  
+        }
     }
 }
