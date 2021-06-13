@@ -64,15 +64,15 @@ public class Melee : MonoBehaviour {
         
 
         Vector3 initPos = transform.position;
-        Vector3 goalPos = transform.position + transform.right * dashDistance * (transform.localScale.x > 0 ? 1 : -1);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position,  transform.right * (transform.localScale.x > 0 ? 1 : -1), dashDistance);
+        Vector3 goalPos = hit ? new Vector3(hit.point.x, hit.point.y, 0) : transform.position + transform.right * dashDistance * (transform.localScale.x > 0 ? 1 : -1);
 
         float t = 0;
         while(t < 1){
             player.Rb2D.MovePosition(Vector3.Lerp(initPos, goalPos, t));
             t += Time.fixedDeltaTime * 3f;
 
-            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 5f, ~LayerMask.GetMask("Player"));
-        // Debug.DrawLine(transform.position, transform.position + transform.right * meleeRange, Color.red);
+            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 6f, ~LayerMask.GetMask("Player"));
             foreach(Collider2D col in cols){
                 if(col.GetComponent<Baddie>()){
                     col.GetComponent<Baddie>().takeDamage();

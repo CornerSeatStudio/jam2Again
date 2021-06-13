@@ -36,7 +36,7 @@ public class GameHandler : MonoBehaviour
 
     public void Start(){
         spawnNextPickup();
-
+        currScore = 0f;
         //spawn player(s) and link them to the target
         GameObject newPlayer = Instantiate(characters[UnityEngine.Random.Range(0, characters.Count)], playerSpawnPos1.position, playerSpawnPos1.rotation);
         Player1 = newPlayer.GetComponent<Player>();
