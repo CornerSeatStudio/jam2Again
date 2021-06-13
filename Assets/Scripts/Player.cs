@@ -154,8 +154,9 @@ public class Player : MonoBehaviour {
         // Col.enabled = false;
 
         StartCoroutine(disablePlayerAfterDeath());
-
-        gameHandler.onGameEnd();
+        Debug.Log(gameHandler.Player1.Health);
+        Debug.Log(gameHandler.Player2.Health);
+        if(GameHandler.IsCoop && gameHandler.Player1.Health <= 0 && gameHandler.Player2.Health <= 0) gameHandler.onGameEnd();
     }
 
     public IEnumerator disablePlayerAfterDeath(){

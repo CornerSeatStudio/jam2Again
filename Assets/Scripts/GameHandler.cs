@@ -36,7 +36,7 @@ public class GameHandler : MonoBehaviour
     public GameObject deathMenu;
 
     int CURR_INDEX;
-    public static bool IsCoop {get; set; } = false;
+    public static bool IsCoop {get; set; } = true;
     public void Start(){
         spawnNextPickup();
         currScore = 0f;
@@ -48,7 +48,7 @@ public class GameHandler : MonoBehaviour
         if(IsCoop){
             GameObject newPlayer2 = Instantiate(characters[(CURR_INDEX+1) % 3], playerSpawnPos2.position, playerSpawnPos2.rotation);
             Player2 = newPlayer2.GetComponent<Player>();
-            Player2.Player_ID = 2;
+            Player2.Player_ID = 1;
         }
         
         //initial rotate stage? default for now
