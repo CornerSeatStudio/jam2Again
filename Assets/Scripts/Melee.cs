@@ -23,8 +23,8 @@ public class Melee : MonoBehaviour {
     private void Update() {
         if(player.Health <= 0) return;
 
-        if(Input.GetButtonDown("Fire1") && !cooldowning) StartCoroutine(manageCooldown());    
-        if(Input.GetButtonDown("Fire2") && !abilityCooldowning) {
+        if(Input.GetKeyDown(player.controlManager.GetKey(player.Player_ID, ControlManager.ControlKey.AttackKey)) && !cooldowning) StartCoroutine(manageCooldown());    
+        if(Input.GetKeyDown(player.controlManager.GetKey(player.Player_ID, ControlManager.ControlKey.AbilityKey)) && !abilityCooldowning) {
             StartCoroutine(doAbility()); 
             StartCoroutine(barHandle());
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public int Player_ID {get; set; } = 1;
+    public int Player_ID {get; set; } = 0;
     public AudioClip audDeath;
     public AudioClip audJump;
     public AudioClip audDamage;
@@ -64,7 +64,15 @@ public class Player : MonoBehaviour {
         if(switchedDir() || inputRaw == 0) Rb2D.velocity = new Vector2(0f, Rb2D.velocity.y);
     }
     void Update() {
-        inputRaw = Input.GetAxisRaw("Horizontal");
+        
+        inputRaw = (Input.GetKey(controlManager.GetKey(Player_ID, ControlManager.ControlKey.LeftKey)) ? -1 : 0) + (Input.GetKey(controlManager.GetKey(Player_ID, ControlManager.ControlKey.RightKey)) ? 1 : 0);
+        // inputRaw += ;
+        // inputRaw += ;
+        // Debug.Log(inputRaw);
+        // inputRaw = Input.GetAxisRaw("Horizontal");
+
+
+
         handleJump();
         counterMovement();
         flipToFace();
@@ -92,7 +100,7 @@ public class Player : MonoBehaviour {
     void handleJump(){
         if(Health <= 0) return;
         // Debug.Log(isGrounded());
-        if(jumpMode != 0 && Input.GetButtonDown("Jump")){
+        if(jumpMode != 0 && Input.GetKeyDown(controlManager.GetKey(Player_ID, ControlManager.ControlKey.JumpKey))){
             jumpMode--;
      
             Rb2D.velocity = new Vector2(Rb2D.velocity.x, 0f);
@@ -109,7 +117,7 @@ public class Player : MonoBehaviour {
 
     void handleMovement(){
         if(Health <= 0) return;
-
+        Debug.Log(inputRaw * maxMoveSpeed);
         // float sped = Mathf.SmoothDamp(Rb2D.velocity.x, maxMoveSpeed * inputRaw, ref currVel, smooth);
         Rb2D.velocity = new Vector2(inputRaw * maxMoveSpeed, Rb2D.velocity.y);
        
