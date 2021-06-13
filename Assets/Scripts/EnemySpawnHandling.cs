@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemySpawnHandling : MonoBehaviour
 {
+    public AudioClip audPortal;
 
     public enum level {GREEN, WEEB, SAND, COMB};
     public GameObject levelObject;
@@ -50,10 +51,12 @@ public class EnemySpawnHandling : MonoBehaviour
             }
             //spawn an AI 
 
-
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.PlayOneShot(audPortal);
             // Debug.Log(gameHandler.portalPrefab);
             Vector3 spawnPosition = spawnpoints[Random.Range(0, spawnpoints.Count)].position;
             GameObject portal = Instantiate(gameHandler.portalPrefab, spawnPosition, Quaternion.identity);
+
             yield return new WaitForSeconds(1f);
             
             GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPosition, transform.rotation);

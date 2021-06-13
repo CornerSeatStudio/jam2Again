@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500b19d74baac614792ffefbc4129f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audPortal: {fileID: 8300000, guid: 1736acff3ea2ad246a9bb8c0835ece0e, type: 3}
   levelObject: {fileID: 0}
   spawnpoints:
   - {fileID: 4060183894662599208}
@@ -116,8 +117,9 @@ MonoBehaviour:
   enemies:
   - {fileID: 6351466728480505731, guid: 5d5b43490c28ff54e8d755467e579b5a, type: 3}
   spawnsPerSecStart: 5
-  spawnsPerSecClimb: 0
+  spwansPerSecCap: 1
   thisLevel: 0
+  activeBaddies: []
 --- !u!1 &4060183895955255287
 GameObject:
   m_ObjectHideFlags: 0

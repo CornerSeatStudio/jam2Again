@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class Melee : MonoBehaviour {
     public AudioClip audSwing;
+    public AudioClip audAbility;
     Player player;
     public float meleeRange = 8f; 
     public float abilityCooldown = 5f;
@@ -22,7 +23,8 @@ public class Melee : MonoBehaviour {
     IEnumerator doAbility(){
         abilityCooldowning = true;
         player.Animator.SetTrigger(Animator.StringToHash("Ability"));
-   
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(audAbility);
         player.Invulnerable = true;
         player.Col.enabled = false;
 

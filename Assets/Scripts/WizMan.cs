@@ -6,6 +6,7 @@ using UnityEngine;
 public class WizMan : MonoBehaviour {
 
     public AudioClip audExplod;
+    public AudioClip audExplodsec;
     public AudioClip audCast;
     Player player;
     public float orbLifetime = 5f;
@@ -38,6 +39,8 @@ public class WizMan : MonoBehaviour {
     IEnumerator doAbility(){
         abilityCooldowning = true;
         player.Animator.Play(Animator.StringToHash("Ability"));
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(audExplodsec);
         yield return new WaitForSeconds(.2f);
         conductAbility();
         yield return new WaitForSeconds(abilityCooldown);

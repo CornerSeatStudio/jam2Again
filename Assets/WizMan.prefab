@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audExplod: {fileID: 8300000, guid: 3f7c077deaaa4e745b897a67bf57e5de, type: 3}
+  audExplodsec: {fileID: 8300000, guid: e1f1bae2251e6a644bf90f49441804ad, type: 3}
   audCast: {fileID: 8300000, guid: 8d159b668cfb9f74b9f3a7183062bcfa, type: 3}
   orbLifetime: 5
   orbPrefab: {fileID: 997238729962857615, guid: a77cdca776e147646960bc40eb69ff5b, type: 3}
@@ -226,6 +227,7 @@ MonoBehaviour:
   orbMoveSpeed: 15
   explosionRadius: 35
   attackCooldown: 2
+  abilityCooldown: 5
 --- !u!82 &-4459484109127541276
 AudioSource:
   m_ObjectHideFlags: 0
