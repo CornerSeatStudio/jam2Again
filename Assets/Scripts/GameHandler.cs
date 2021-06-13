@@ -98,9 +98,9 @@ public class GameHandler : MonoBehaviour
     }
 
     private void Update() {
-        if(!InTransition && Input.GetKeyDown(KeyCode.G)){
+        if(!InTransition && Input.GetKeyDown(KeyCode.Q)){
             StartCoroutine(OnFlipActivate(true));
-        } else if(!InTransition && Input.GetKeyDown(KeyCode.H)){
+        } else if(!InTransition && Input.GetKeyDown(KeyCode.E)){
             StartCoroutine(OnFlipActivate(false));
         }
 
