@@ -18,7 +18,7 @@ public class Melee : MonoBehaviour {
         AudioSource audio = GetComponent<AudioSource>();
         audio.PlayOneShot(audSwing);
         player.Animator.SetTrigger(Animator.StringToHash("Hitting"));
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position + transform.right * meleeRange * (transform.localScale.x > 0 ? 1 : -1), 5f, ~LayerMask.GetMask("Player"));
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position + transform.right * meleeRange * (transform.localScale.x > 0 ? 1 : -1), 8f, ~LayerMask.GetMask("Player"));
         // Debug.DrawLine(transform.position, transform.position + transform.right * meleeRange, Color.red);
         foreach(Collider2D col in cols){
             if(col.GetComponent<Baddie>()){

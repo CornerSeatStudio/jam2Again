@@ -51,8 +51,9 @@ public class EnemySpawnHandling : MonoBehaviour
             //spawn an AI 
 
 
+            // Debug.Log(gameHandler.portalPrefab);
             Vector3 spawnPosition = spawnpoints[Random.Range(0, spawnpoints.Count)].position;
-            GameObject portal = Instantiate(gameHandler.portalPrefab, spawnPosition, transform.rotation);
+            GameObject portal = Instantiate(gameHandler.portalPrefab, spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(1f);
             
             GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPosition, transform.rotation);
