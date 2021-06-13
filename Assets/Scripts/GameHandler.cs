@@ -12,7 +12,7 @@ public class GameHandler : MonoBehaviour
     public static float currScore;
     public Animator cameraAnimator;
     public float rotSmoothness;
-
+    public GameObject pickup;
     public List<Transform> pickupSpawnpoints;
 
     private bool inTransition = false;
@@ -21,7 +21,7 @@ public class GameHandler : MonoBehaviour
     private static readonly Vector3 DIR2 = new Vector3(90f, 0f, 0f);
     private static readonly Vector3 DIR3 = new Vector3(180f, 0f, 0f);
     private static readonly Vector3 DIR4 = new Vector3(270f, 0f, 0f);
-    public Vector3 CurrRotation {get; private set; }
+    public Vector3 CurrRotation {get; private set;}
     public UnityEvent preFlipEvent;
 
     public UnityEvent postFlipEvent;
@@ -55,6 +55,8 @@ public class GameHandler : MonoBehaviour
         Debug.Log("spawning pickup");
 
         //spawn orientation depends on list
+        Transform toSpawn = pickupSpawnpoints[Random.Range(0, pickupSpawnpoints.Count)];
+        Instantiate(pickup, toSpawn.position, toSpawn.rotation);
 
     }
 
