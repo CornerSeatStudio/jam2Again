@@ -16,9 +16,9 @@ public class EnemySpawnHandling : MonoBehaviour
     public level thisLevel;
     public static Dictionary<level, float> orientationMapping = new Dictionary<level, float>(){
         { level.GREEN, 0f },
-        { level.WEEB, 90f },
+        { level.WEEB, 270f },
         { level.SAND, 180f },
-        { level.COMB, 270f }
+        { level.COMB, 90f }
     };
     GameHandler gameHandler;
 
@@ -37,6 +37,8 @@ public class EnemySpawnHandling : MonoBehaviour
 
     public void checkIsActiveSubscriber() {
         isActive = orientationMapping[thisLevel] == gameHandler.CurrRotation.x;
+        // Debug.Log(orientationMapping[thisLevel]);
+        // Debug.Log(gameHandler.CurrRotation.x);
         if(isActive) reanimateOutPlane();
     }
 
