@@ -3911,11 +3911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6060722663998194564, guid: ef70de285ef091c4fbe2b15edfb6fdab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6060722663998194564, guid: ef70de285ef091c4fbe2b15edfb6fdab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: loadScene
+      value: loadCredit
       objectReference: {fileID: 0}
     - target: {fileID: 6060722664371837025, guid: ef70de285ef091c4fbe2b15edfb6fdab, type: 3}
       propertyPath: m_Sprite

@@ -35,27 +35,32 @@ public class Baddie : MonoBehaviour {
 
     IEnumerator TargetUpdater(){
         while(true){
-            if( gameHandler.Player1.Health > 0 && gameHandler.Player2.Health > 0){
-                float p1Dist = Vector3.Distance(transform.position, gameHandler.Player1.transform.position);
-                float p2Dist = Vector3.Distance(transform.position, gameHandler.Player2.transform.position);
+            if(!GameHandler.IsCoop){
+                destSetter.target = gameHandler.Player1.transform;
+            }else {
+                if( gameHandler.Player1.Health > 0 && gameHandler.Player2.Health > 0){
+                    float p1Dist = Vector3.Distance(transform.position, gameHandler.Player1.transform.position);
+                    float p2Dist = Vector3.Distance(transform.position, gameHandler.Player2.transform.position);
 
-                if(p1Dist > p2Dist){
+                    if(p1Dist > p2Dist){
+                        destSetter.target = gameHandler.Player2.transform;
+
+                    } else {
+                        destSetter.target = gameHandler.Player1.transform;
+
+                    }
+
+                } else if (gameHandler.Player1.Health > 0){
+                    destSetter.target = gameHandler.Player1.transform;
+
+                } else if (gameHandler.Player2.Health > 0){
                     destSetter.target = gameHandler.Player2.transform;
 
                 } else {
-                    destSetter.target = gameHandler.Player1.transform;
-
+                    destSetter.target = null;
                 }
-
-            } else if (gameHandler.Player1.Health > 0){
-                destSetter.target = gameHandler.Player1.transform;
-
-            } else if (gameHandler.Player2.Health > 0){
-                destSetter.target = gameHandler.Player2.transform;
-
-            } else {
-                destSetter.target = null;
             }
+            
             
             yield return new WaitForSeconds(1f);
         }
