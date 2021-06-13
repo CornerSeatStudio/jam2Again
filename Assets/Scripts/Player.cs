@@ -71,7 +71,10 @@ public class Player : MonoBehaviour {
     void LateUpdate() {
         // Debug.Log(Rb2D.velocity.x);
         Animator.SetBool(Animator.StringToHash("Moving"), inputRaw != 0);
+        Animator.SetBool(Animator.StringToHash("Falling"), !isGrounded());
     }
+
+
     bool switchedDir() => lastMoveDir == (int) inputRaw;
     void flipToFace() {
         if(Health <= 0) return;
