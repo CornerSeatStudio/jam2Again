@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public AudioClip audDeath;
     public AudioClip audJump;
     public int initHealth = 3;
     public float invulnTime = 2f;
@@ -136,6 +137,8 @@ public class Player : MonoBehaviour {
     public void onDeath(){
         //todo fall to floor
         Animator.Play(Animator.StringToHash("death"));
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(audDeath);
         // Col.enabled = false;
 
         StartCoroutine(disablePlayerAfterDeath());
