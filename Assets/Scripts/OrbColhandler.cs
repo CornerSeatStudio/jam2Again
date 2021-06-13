@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class OrbColhandler : MonoBehaviour
 {
     public Rigidbody2D Rb2D {get; private set; }
@@ -9,6 +8,7 @@ public class OrbColhandler : MonoBehaviour
     WizMan player;
     SpriteRenderer rend;
     public bool Exploding {get; set; } = false;
+
     private void Awake() {
         col2D = GetComponent<Collider2D>();
         rend = GetComponent<SpriteRenderer>();
