@@ -4,7 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using UnityEngine.Events;
 using System;
-
+using Pathfinding;
 public class Baddie : MonoBehaviour {
     public int Health {get; set; } = 1;
     protected AIPath aIPath;
@@ -15,7 +15,7 @@ public class Baddie : MonoBehaviour {
     public double NextAttack;
     
     protected GameHandler gameHandler;
-
+    public AIDestinationSetter destSetter;
     public event Action<Baddie> onDeathEvent;     
 
     private void Start() {
@@ -23,10 +23,20 @@ public class Baddie : MonoBehaviour {
         Col = this.GetComponent<Collider2D>();
         animator = this.GetComponent<Animator>();
         gameHandler = FindObjectOfType<GameHandler>();
+        destSetter = this.GetComponent<AIDestinationSetter>();
+
+        StartCoroutine(TargetUpdater());
 
         NextAttack = Time.time;
         atkDistance = 10;
         coolDown = 5;
+    }
+
+    IEnumerator TargetUpdater(){
+        while(true){
+            destSetter.target = gameHandler.player1.transform;
+            yield return new WaitForSeconds(1f);
+        }
     }
     void Update(){
         if(aIPath.desiredVelocity.x >= 0.01){
@@ -40,6 +50,8 @@ public class Baddie : MonoBehaviour {
         //     NextAttack = Time.time + coolDown;
         // }
     }
+
+
     public void takeDamage(){
         Health--;
         if(Health <= 0) onDeath();

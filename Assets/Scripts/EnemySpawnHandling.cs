@@ -55,7 +55,6 @@ public class EnemySpawnHandling : MonoBehaviour
             GameObject portal = Instantiate(gameHandler.portalPrefab, spawnPosition, transform.rotation);
             yield return new WaitForSeconds(1f);
             
-            Debug.Log(portal);
             GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPosition, transform.rotation);
             Baddie temp = go.GetComponent<Baddie>();
             temp.onDeathEvent += deathHandlingSubscriber;

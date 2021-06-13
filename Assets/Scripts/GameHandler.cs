@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -26,6 +27,7 @@ public class GameHandler : MonoBehaviour
     public UnityEvent preFlipEvent;
 
     public UnityEvent postFlipEvent;
+    public event Action<int> onPickupEvent;
     public bool GameEnd {get; private set; } = false;
 
 
@@ -38,6 +40,7 @@ public class GameHandler : MonoBehaviour
 
     public void increaseScore(Player oldPlayer){
         currScore++;
+        onPickupEvent?.Invoke((int)currScore);
         changeCharacter(oldPlayer);
         spawnNextPickup();
     }
@@ -47,7 +50,7 @@ public class GameHandler : MonoBehaviour
         //for now allow to switch to same character by chance
         
         //POOF and switcheroo
-        GameObject newPlayer = Instantiate(characters[Random.Range(0, characters.Count)], oldPlayer.transform.position, oldPlayer.transform.rotation);
+        GameObject newPlayer = Instantiate(characters[UnityEngine.Random.Range(0, characters.Count)], oldPlayer.transform.position, oldPlayer.transform.rotation);
         player1 = newPlayer.GetComponent<Player>();
         player1.Health = oldPlayer.Health;
         Destroy(oldPlayer.gameObject);
@@ -58,7 +61,7 @@ public class GameHandler : MonoBehaviour
         // Debug.Log("spawning pickup");
 
         //spawn orientation depends on list
-        Transform toSpawn = pickupSpawnpoints[Random.Range(0, pickupSpawnpoints.Count)];
+        Transform toSpawn = pickupSpawnpoints[UnityEngine.Random.Range(0, pickupSpawnpoints.Count)];
         Instantiate(pickup, toSpawn.position, toSpawn.rotation);
 
     }
