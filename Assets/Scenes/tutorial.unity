@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 334, y: -43}
+  m_AnchoredPosition: {x: 334, y: -120.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21034047
@@ -353,7 +353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43056421}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.756738, y: 1.4290376, z: 0}
+  m_LocalPosition: {x: -7.756738, y: -0.42759347, z: 0}
   m_LocalScale: {x: 0.069, y: 0.069, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -393,7 +393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -135}
+  m_AnchoredPosition: {x: 7, y: 9.099991}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45109259
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 30.158302}
+  m_margin: {x: -18.585175, y: 0, z: -18.585205, w: 30.158302}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -591,7 +591,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81317236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1332617, y: 1.5590377, z: 0}
+  m_LocalPosition: {x: 4.1332617, y: -0.29759336, z: 0}
   m_LocalScale: {x: 0.069, y: 0.069, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -631,7 +631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -204, y: -0.29999542}
+  m_AnchoredPosition: {x: -204, y: -77.399994}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215879855
@@ -765,7 +765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73.699974, y: -43}
+  m_AnchoredPosition: {x: 73.699974, y: -120.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &247319943
@@ -899,7 +899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -259, y: -92}
+  m_AnchoredPosition: {x: -259, y: 147}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265891621
@@ -1095,7 +1095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310465196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5667381, y: 1.4290376, z: 0}
+  m_LocalPosition: {x: -1.5667381, y: -0.42759347, z: 0}
   m_LocalScale: {x: 0.069, y: 0.069, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1201,7 +1201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 262, y: -120}
+  m_AnchoredPosition: {x: 262, y: 5.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688204318
@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 30.158302}
+  m_margin: {x: -15.578659, y: 0, z: -26.131958, w: 30.158302}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1958,7 +1958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -92}
+  m_AnchoredPosition: {x: 7, y: 147}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1087426720
@@ -2092,7 +2092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 334, y: -0.29999542}
+  m_AnchoredPosition: {x: 334, y: -77.399994}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214115321
@@ -2372,7 +2372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73.7, y: -0.29999542}
+  m_AnchoredPosition: {x: 73.7, y: -77.399994}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283708679
@@ -2506,7 +2506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 268, y: -92}
+  m_AnchoredPosition: {x: 268, y: 147}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1536299663
@@ -2834,7 +2834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758425247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5367382, y: 0.30663115, z: 0}
+  m_LocalPosition: {x: -1.5367382, y: -1.55, z: 0}
   m_LocalScale: {x: 0.069, y: 0.069, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2874,7 +2874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -204, y: -43}
+  m_AnchoredPosition: {x: -204, y: -120.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808202137
@@ -3008,7 +3008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -261, y: -120}
+  m_AnchoredPosition: {x: -261, y: 9.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851132383
@@ -3031,10 +3031,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Juro is the youngest son of a prominent warrior family. As the youngest
+  m_text: 'Juro is the youngest son of a prominent warrior family. As the youngest
     son, Juro struggled to find a place for him in his home competing with his siblings,
-    and now journeys to find his meaning elsewhere. However, what Juro found was
-    a bit different than what he was expecting\u2026"
+    and now journeys to find his meaning elsewhere. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d72c170a3c0f8ed4ca9dc244b9f6083e, type: 2}
   m_sharedMaterial: {fileID: -533110106364164090, guid: d72c170a3c0f8ed4ca9dc244b9f6083e, type: 2}
@@ -3097,7 +3096,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 30.158302}
+  m_margin: {x: -30.975258, y: 0, z: -27.36148, w: 30.158302}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3323,7 +3322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939019531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1332617, y: 0.39663118, z: 0}
+  m_LocalPosition: {x: 4.1332617, y: -1.4599998, z: 0}
   m_LocalScale: {x: 0.069, y: 0.069, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3527,7 +3526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047373359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.566738, y: 0.22061682, z: 0}
+  m_LocalPosition: {x: -7.566738, y: -1.6360142, z: 0}
   m_LocalScale: {x: 0.069, y: 0.069, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
