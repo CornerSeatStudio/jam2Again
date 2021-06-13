@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using System;
 using Pathfinding;
 public class Baddie : MonoBehaviour {
+    public AudioClip audEnemyDeath;
     public int Health {get; set; } = 1;
     protected AIPath aIPath;
     public Collider2D Col {get; private set; }
@@ -66,6 +67,8 @@ public class Baddie : MonoBehaviour {
         //disintegrate/explode
         animator.SetTrigger(Animator.StringToHash("Dead"));
         Destroy(this.gameObject, 3f);
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(audEnemyDeath);
     }
     
     //presumably, we would have the player take damage through a call here

@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fe2cd5ea6a4554c94b7778b2323585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audDynamit: {fileID: 8300000, guid: 6e52b8569ef8f024d8560472e4e6e5c0, type: 3}
   audArrow: {fileID: 8300000, guid: 10992e5caa78b4348970772e74db75ef, type: 3}
   arrowForce: 500
   grenadeForce: 15

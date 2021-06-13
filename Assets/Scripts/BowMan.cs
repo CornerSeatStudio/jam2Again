@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class BowMan : MonoBehaviour {
 
+    public AudioClip audDynamit;
      public AudioClip audArrow;
     public float arrowForce = 500f;
     public float grenadeForce = 15f;
@@ -54,6 +55,8 @@ public class BowMan : MonoBehaviour {
         yield return new WaitForSeconds(3f);
 
         grenade.GetComponent<Animator>().Play("explode");
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(audDynamit);
         Collider2D[] cols = Physics2D.OverlapCircleAll(grenade.transform.position, grenadeRadius);
         foreach(Collider2D col in cols){
             if(col.GetComponent<Baddie>()){

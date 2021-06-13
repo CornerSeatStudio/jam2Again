@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class GameHandler : MonoBehaviour
 {
+    public AudioClip audCOIN;
 
     public Player Player1 {get; private set; }
     public GameObject rotatingContraption;
@@ -47,6 +48,8 @@ public class GameHandler : MonoBehaviour
     public void increaseScore(Player oldPlayer){
         currScore++;
         onPickupEvent?.Invoke((int)currScore);
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(audCOIN);
         changeCharacter(oldPlayer);
         spawnNextPickup();
     }
