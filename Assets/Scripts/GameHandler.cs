@@ -33,19 +33,21 @@ public class GameHandler : MonoBehaviour
         GameEnd = false;
     }
 
-    public void increaseScore(Player player){
+    public void increaseScore(Player oldPlayer){
         currScore++;
-        changeCharacter(player);
+        changeCharacter(oldPlayer);
         spawnNextPickup();
     }
 
-    void changeCharacter(Player player){
+    void changeCharacter(Player oldPlayer){
         Debug.Log("changing char");
         //for now allow to switch to same character by chance
         
         //POOF and switcheroo
-        Instantiate(characters[Random.Range(0, characters.Count)], player.transform.position, player.transform.rotation);
-        Destroy(player.gameObject);
+        GameObject newPlayer = Instantiate(characters[Random.Range(0, characters.Count)], oldPlayer.transform.position, oldPlayer.transform.rotation);
+        player1 = newPlayer.GetComponent<Player>();
+        player1.Health = oldPlayer.Health;
+        Destroy(oldPlayer.gameObject);
 
     }
 

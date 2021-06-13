@@ -28,7 +28,7 @@ public class Player : MonoBehaviour {
     public GameHandler gameHandler {get; private set; }
 
     //other
-    int Health {get; set; }
+    public int Health {get; set; }
     int jumpMode;  //0 - none left, >0 - jumps left
     public bool FacingLeft {get; private set; } = false;
     public bool Invulnerable {get; set; } = false;
