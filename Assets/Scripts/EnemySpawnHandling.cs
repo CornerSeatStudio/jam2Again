@@ -53,7 +53,7 @@ public class EnemySpawnHandling : MonoBehaviour
 
             AudioSource audio = GetComponent<AudioSource>();
             audio.PlayOneShot(audPortal);
-            // Debug.Log(gameHandler.portalPrefab);
+            Debug.Log(gameHandler.portalPrefab);
             Vector3 spawnPosition = spawnpoints[Random.Range(0, spawnpoints.Count)].position;
             GameObject portal = Instantiate(gameHandler.portalPrefab, spawnPosition, Quaternion.identity);
 
