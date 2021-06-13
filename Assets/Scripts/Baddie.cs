@@ -20,6 +20,10 @@ public class Baddie : MonoBehaviour {
         } else if(aIPath.desiredVelocity.x <= -0.01) {
             transform.localScale = new Vector2(1f, 1f);
         }
+        if(Time.time > NextAttack && checkAttackPosition()) {
+            attack();
+            NextAttack = Time.time + coolDown;
+        }
     }
     public void takeDamage(){
         Health--;
