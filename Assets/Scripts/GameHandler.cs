@@ -44,8 +44,9 @@ public class GameHandler : MonoBehaviour
         CURR_INDEX = UnityEngine.Random.Range(0, characters.Count);
         GameObject newPlayer = Instantiate(characters[CURR_INDEX], playerSpawnPos1.position, playerSpawnPos1.rotation);
         Player1 = newPlayer.GetComponent<Player>();
-        Player1.Player_ID = 0;
+        Player1.Player_ID = 2;
         if(IsCoop){
+            Player1.Player_ID = 0;
             GameObject newPlayer2 = Instantiate(characters[(CURR_INDEX+1) % 3], playerSpawnPos2.position, playerSpawnPos2.rotation);
             Player2 = newPlayer2.GetComponent<Player>();
             Player2.Player_ID = 1;

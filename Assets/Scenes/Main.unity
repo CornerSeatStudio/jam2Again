@@ -1013,6 +1013,17 @@ MonoBehaviour:
       keyCode: 44
     - controlKey: 4
       keyCode: 46
+  - keyCodesMappings:
+    - controlKey: 0
+      keyCode: 97
+    - controlKey: 1
+      keyCode: 100
+    - controlKey: 2
+      keyCode: 32
+    - controlKey: 3
+      keyCode: 324
+    - controlKey: 4
+      keyCode: 323
 --- !u!82 &879496307
 AudioSource:
   m_ObjectHideFlags: 0
