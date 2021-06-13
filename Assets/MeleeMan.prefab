@@ -168,9 +168,9 @@ MonoBehaviour:
   audJump: {fileID: 0}
   initHealth: 3
   invulnTime: 2
-  jumpForce: 60
+  jumpForce: 80
   groundCheckThreshold: 1.5
-  jumpCount: 1
+  jumpCount: 2
   maxMoveSpeed: 30
   slopeCheckMod: 2
   slopeDownForce: 50

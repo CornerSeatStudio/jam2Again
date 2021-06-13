@@ -27,10 +27,6 @@ public class GameHandler : MonoBehaviour
     public UnityEvent postFlipEvent;
     public bool GameEnd {get; private set; } = false;
 
-    public Collider2D GREENOUTS;
-    public Collider2D WEEBOUTS;
-    public Collider2D SANDOUTS;
-    public Collider2D COMBOUTS;
 
     public void Start(){
         spawnNextPickup();

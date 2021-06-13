@@ -85,9 +85,10 @@ public class Player : MonoBehaviour {
     void handleJump(){
         if(Health <= 0) return;
         // Debug.Log(isGrounded());
-        if(jumpMode != 0 && (isGrounded() || OnSlope()) && Input.GetButtonDown("Jump")){
+        if(jumpMode != 0 && Input.GetButtonDown("Jump")){
             jumpMode--;
      
+            Rb2D.velocity = new Vector2(Rb2D.velocity.x, 0f);
             Rb2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             AudioSource audio = GetComponent<AudioSource>();
             audio.PlayOneShot(audJump);
