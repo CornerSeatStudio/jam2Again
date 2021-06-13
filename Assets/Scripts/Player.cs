@@ -133,10 +133,17 @@ public class Player : MonoBehaviour {
     public void onDeath(){
         //todo fall to floor
         Animator.Play(Animator.StringToHash("death"));
-        Col.enabled = false;
-        Rb2D.isKinematic = true;
-        // Destroy(this); //temporarily
+        // Col.enabled = false;
+
+        StartCoroutine(disablePlayerAfterDeath());
+
         gameHandler.onGameEnd();
+    }
+
+    public IEnumerator disablePlayerAfterDeath(){
+        yield return new WaitForSeconds(2f);
+        Rb2D.isKinematic = true;
+        Col.enabled = false;
     }
 
     

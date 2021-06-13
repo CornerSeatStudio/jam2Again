@@ -14,6 +14,7 @@ public class GameHandler : MonoBehaviour
     public float rotSmoothness;
     public GameObject pickup;
     public List<Transform> pickupSpawnpoints;
+    public GameObject portalPrefab;
 
     private bool inTransition = false;
 
@@ -54,7 +55,7 @@ public class GameHandler : MonoBehaviour
     }
 
     void spawnNextPickup(){
-        Debug.Log("spawning pickup");
+        // Debug.Log("spawning pickup");
 
         //spawn orientation depends on list
         Transform toSpawn = pickupSpawnpoints[Random.Range(0, pickupSpawnpoints.Count)];
