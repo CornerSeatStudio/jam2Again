@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4f52bc788862d428c33ebb23e160c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
   rotatingContraption: {fileID: 0}
   characters:
   - {fileID: 3027654041839870061, guid: a33f91ea5e78ace4e9affc3fc0d80f67, type: 3}
@@ -51,7 +50,24 @@ MonoBehaviour:
   - {fileID: 4642609777315149385, guid: cb1c7f3614acedd439ac5d1f86f39edb, type: 3}
   cameraAnimator: {fileID: 0}
   rotSmoothness: 0.88
-  pickupSpawnpoints: []
+  pickup: {fileID: 245970226999246013, guid: 0f3f96b0472595742b81474b5e36566a, type: 3}
+  pickupSpawnpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  portalPrefab: {fileID: 4862227353796270583, guid: b11f84dec3cd7f64c88dc0b60b115743, type: 3}
+  playerSpawnPos1: {fileID: 0}
   preFlipEvent:
     m_PersistentCalls:
       m_Calls:
@@ -154,4 +170,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  pauseMenu: {fileID: 0}
+  deathMenu: {fileID: 0}
   zoomOutCameraSize: 0

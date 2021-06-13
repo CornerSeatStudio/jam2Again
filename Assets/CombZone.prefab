@@ -2136,6 +2136,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: combplats
       objectReference: {fileID: 0}
+    - target: {fileID: 4342116471694961711, guid: cfd27b610a89ed047bc285c76963acd4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342116471694961711, guid: cfd27b610a89ed047bc285c76963acd4, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342116471694961711, guid: cfd27b610a89ed047bc285c76963acd4, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1891731611
+      objectReference: {fileID: 0}
     - target: {fileID: 5452103655846735684, guid: cfd27b610a89ed047bc285c76963acd4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2150,7 +2162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452103655846735684, guid: cfd27b610a89ed047bc285c76963acd4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5452103655846735684, guid: cfd27b610a89ed047bc285c76963acd4, type: 3}
       propertyPath: m_LocalRotation.w
