@@ -3326,6 +3326,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 930874954}
     - target: {fileID: 1853964081486069759, guid: 416693e482640e84eaf856a05bd26580, type: 3}
+      propertyPath: playerSpawnPos2
+      value: 
+      objectReference: {fileID: 504346247}
+    - target: {fileID: 1853964081486069759, guid: 416693e482640e84eaf856a05bd26580, type: 3}
       propertyPath: rotatingContraption
       value: 
       objectReference: {fileID: 1030725429}
