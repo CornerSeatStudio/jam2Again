@@ -11,7 +11,7 @@ public class EnemySpawnHandling : MonoBehaviour
     public List<Transform> spawnpoints;
     public List<GameObject> enemies;
     public float spawnsPerSecStart;
-    public float spawnsPerSecClimb;
+    public float spwansPerSecCap = 1;
     public float SpawnsPerSec {get; private set; }
     public level thisLevel;
     public static Dictionary<level, float> orientationMapping = new Dictionary<level, float>(){
@@ -49,12 +49,25 @@ public class EnemySpawnHandling : MonoBehaviour
                 continue;
             }
             //spawn an AI 
-            GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnpoints[Random.Range(0, spawnpoints.Count)].position, transform.rotation);
+
+
+            Vector3 spawnPosition = spawnpoints[Random.Range(0, spawnpoints.Count)].position;
+            GameObject portal = Instantiate(gameHandler.portalPrefab, spawnPosition, transform.rotation);
+            yield return new WaitForSeconds(1f);
+            
+            Debug.Log(portal);
+            GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPosition, transform.rotation);
             Baddie temp = go.GetComponent<Baddie>();
             temp.onDeathEvent += deathHandlingSubscriber;
             go.GetComponent<AIDestinationSetter>().target = gameHandler.player1.transform; //temp if we want coop
             activeBaddies.Add(temp);
+
+            yield return new WaitForSeconds(1f);
+            portal.GetComponent<Animator>().Play(Animator.StringToHash("portalclose"));
+            Destroy(portal, 1f);    
+
             yield return new WaitForSeconds(SpawnsPerSec);
+            SpawnsPerSec = Mathf.Max(SpawnsPerSec - .02f, spwansPerSecCap);
         }
         yield break;
     }
@@ -65,7 +78,7 @@ public class EnemySpawnHandling : MonoBehaviour
 
     
     public void flattenIntoPlaneSubscriber(){
-        Debug.Log("OSDFJ");
+        // Debug.Log("OSDFJ");
         if(isActive) { //if we're flattening this plane specifically
             isActive = false;
             foreach(Baddie bd in activeBaddies){
