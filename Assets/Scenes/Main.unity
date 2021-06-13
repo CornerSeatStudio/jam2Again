@@ -997,7 +997,7 @@ MonoBehaviour:
     - controlKey: 1
       keyCode: 100
     - controlKey: 2
-      keyCode: 119
+      keyCode: 32
     - controlKey: 3
       keyCode: 116
     - controlKey: 4

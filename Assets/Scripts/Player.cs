@@ -190,32 +190,32 @@ public class Player : MonoBehaviour {
         // Debug.Log("invlun done");
     }
 
-    IEnumerator tempIgnoreCollision(Collision2D other){
-        Physics2D.IgnoreCollision(other.collider, Col);
-        yield return new WaitForSeconds(invulnTime);
-        Debug.Log("COLLISION PLEASE FIX");
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
-        yield return null;
+    // IEnumerator tempIgnoreCollision(Collision2D other){
+    //     // Physics2D.IgnoreCollision(other.collider, Col);
+    //     yield return new WaitForSeconds(invulnTime);
+    //     Debug.Log("COLLISION PLEASE FIX");
+    //     Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(Col, other.collider, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     Physics2D.IgnoreCollision(other.collider, Col, false); //THIS IS BUGGED - SO SPAM IT UNTIL IT WORKS LMFAO
+    //     yield return null;
+    // }
 
-    }
     private void OnCollisionEnter2D(Collision2D other) {
 
         if(other.gameObject.CompareTag("Enemy") && !Invulnerable){
             takeDamage();
-            StartCoroutine(tempIgnoreCollision(other));
+            // StartCoroutine(tempIgnoreCollision(other));
             // Debug.Log("perhaps");
         }
     }
