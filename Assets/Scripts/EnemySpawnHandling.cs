@@ -1,37 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemySpawnHandling : MonoBehaviour
 {
 
+    public enum level {GREEN, WEEB, SAND, COMB};
+    public GameObject levelObject;
     public List<Transform> spawnpoints;
     public List<GameObject> enemies;
     public float spawnsPerSecStart;
     public float spawnsPerSecClimb;
     public float SpawnsPerSec {get; private set; }
-    
-    public float orientationConfiguration = 0f; //todo - to determine which plane to spawn on lol
+    public level thisLevel;
+    public static Dictionary<level, float> orientationMapping = new Dictionary<level, float>(){
+        { level.GREEN, 0f },
+        { level.WEEB, 90f },
+        { level.SAND, 180f },
+        { level.COMB, 270f }
+    };
     GameHandler gameHandler;
-    
+
+    public List<Baddie> activeBaddies;
+
     bool isActive = false;
 
     private void Start() {
         SpawnsPerSec = spawnsPerSecStart;
 
         gameHandler =  FindObjectOfType<GameHandler>();
-        checkIsActive();
+        isActive = orientationMapping[thisLevel] == gameHandler.CurrRotation.x;
         StartCoroutine(spawnHandling());
     }
 
-    public void checkIsActive() => isActive = orientationConfiguration == gameHandler.CurrRotation.x;
+
+    public void checkIsActiveSubscriber() {
+        isActive = orientationMapping[thisLevel] == gameHandler.CurrRotation.x;
+        if(isActive) reanimateOutPlane();
+    }
 
     IEnumerator spawnHandling(){
-        while(isActive && !gameHandler.GameEnd){
+        while(!gameHandler.GameEnd){
+            if(!isActive) continue;
             //spawn an AI 
-            Instantiate(enemies[Random.Range(0, enemies.Count)], spawnpoints[Random.Range(0, spawnpoints.Count)].position, transform.rotation);
+            GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnpoints[Random.Range(0, spawnpoints.Count)].position, transform.rotation);
+            Baddie temp = go.GetComponent<Baddie>();
+            temp.onDeathEvent += deathHandlingSubscriber;
+            go.GetComponent<AIDestinationSetter>().target = gameHandler.player1.transform; //temp if we want coop
+            // activeBaddies.Add(temp);
             yield return new WaitForSeconds(SpawnsPerSec);
         }
         yield break;
+    }
+
+    public void deathHandlingSubscriber(Baddie deadBloke){
+        // activeBaddies.Remove(deadBloke);
+    }
+
+    
+    public void flattenIntoPlaneSubscriber(){
+        Debug.Log("OSDFJ");
+        // if(isActive) { //if we're flattening this plane specifically
+        //     isActive = false;
+        //     foreach(Baddie bd in activeBaddies){
+        //         Debug.Log(bd.name);
+        //         // bd.GetComponent<AIPath>().;
+        //         // bd.transform.parent = levelObject.transform;
+                
+        //     }
+        // }
+        // Debug.Log("idk");
+    }
+
+    void reanimateOutPlane(){
+        // Debug.Log("sdf");
+        // foreach(Baddie bd in activeBaddies){
+        //     if(bd == null) break;
+        //     bd.GetComponent<AIPath>().canMove = true;    
+        //     bd.transform.parent = null;  
+        // }
     }
 }
