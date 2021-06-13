@@ -60,11 +60,19 @@ public class EnemySpawnHandling : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
             
+            if(gameHandler.InTransition) {
+                portal.GetComponent<Animator>().Play(Animator.StringToHash("portalclose"));
+                Destroy(portal, 1f);  
+                yield return new WaitForSeconds(SpawnsPerSec);
+                continue;
+            }
+            
             GameObject go = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPosition, transform.rotation);
             Baddie temp = go.GetComponent<Baddie>();
+            activeBaddies.Add(temp);
+
             temp.onDeathEvent += deathHandlingSubscriber;
             go.GetComponent<AIDestinationSetter>().target = gameHandler.Player1.transform; //temp if we want coop
-            activeBaddies.Add(temp);
 
             yield return new WaitForSeconds(1f);
             portal.GetComponent<Animator>().Play(Animator.StringToHash("portalclose"));
@@ -80,7 +88,15 @@ public class EnemySpawnHandling : MonoBehaviour
         activeBaddies.Remove(deadBloke);
     }
 
-    
+    private void Update() {
+        if(gameHandler.GameEnd){
+            foreach(Baddie bd in activeBaddies.ToArray()){
+                bd.takeDamage();
+            }
+            
+
+        }
+    }
     public void flattenIntoPlaneSubscriber(){
         // Debug.Log("OSDFJ");
         if(isActive) { //if we're flattening this plane specifically

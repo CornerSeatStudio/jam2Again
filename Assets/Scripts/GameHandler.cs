@@ -18,7 +18,7 @@ public class GameHandler : MonoBehaviour
     public List<Transform> pickupSpawnpoints;
     public GameObject portalPrefab;
     public Transform playerSpawnPos1;
-    private bool inTransition = false;
+    public bool InTransition {get; set; }= false;
 
     private static readonly Vector3 DIR1 = new Vector3(0f, 0f, 0f);
     private static readonly Vector3 DIR2 = new Vector3(90f, 0f, 0f);
@@ -33,12 +33,14 @@ public class GameHandler : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject deathMenu;
 
+    int CURR_INDEX;
 
     public void Start(){
         spawnNextPickup();
         currScore = 0f;
         //spawn player(s) and link them to the target
-        GameObject newPlayer = Instantiate(characters[UnityEngine.Random.Range(0, characters.Count)], playerSpawnPos1.position, playerSpawnPos1.rotation);
+        CURR_INDEX = UnityEngine.Random.Range(0, characters.Count);
+        GameObject newPlayer = Instantiate(characters[CURR_INDEX], playerSpawnPos1.position, playerSpawnPos1.rotation);
         Player1 = newPlayer.GetComponent<Player>();
         //initial rotate stage? default for now
         CurrRotation = DIR1;
@@ -59,7 +61,10 @@ public class GameHandler : MonoBehaviour
         //for now allow to switch to same character by chance
         
         //POOF and switcheroo
-        GameObject newPlayer = Instantiate(characters[UnityEngine.Random.Range(0, characters.Count)], oldPlayer.transform.position, oldPlayer.transform.rotation);
+        int newPlayerIndex = UnityEngine.Random.Range(0, characters.Count);
+        if(CURR_INDEX == newPlayerIndex) newPlayerIndex = (newPlayerIndex + 1)%3;
+        CURR_INDEX = newPlayerIndex;
+        GameObject newPlayer = Instantiate(characters[newPlayerIndex], oldPlayer.transform.position, oldPlayer.transform.rotation);
         Player1 = newPlayer.GetComponent<Player>();
         Player1.Health = oldPlayer.Health;
         oldPlayer.gameObject.SetActive(false);
@@ -83,9 +88,9 @@ public class GameHandler : MonoBehaviour
     }
 
     private void Update() {
-        if(!inTransition && Input.GetKeyDown(KeyCode.X)){
+        if(!InTransition && Input.GetKeyDown(KeyCode.X)){
             StartCoroutine(OnFlipActivate(true));
-        } else if(!inTransition && Input.GetKeyDown(KeyCode.Z)){
+        } else if(!InTransition && Input.GetKeyDown(KeyCode.Z)){
             StartCoroutine(OnFlipActivate(false));
         }
 
@@ -115,7 +120,7 @@ public class GameHandler : MonoBehaviour
     public float zoomOutCameraSize;
     public IEnumerator OnFlipActivate(bool dir){
         // Debug.Log(rotatingContraption.transform.rotation);
-        inTransition = true;
+        InTransition = true;
 
         preFlipEvent?.Invoke(); //freeze AI
         
@@ -142,7 +147,7 @@ public class GameHandler : MonoBehaviour
         postFlipEvent?.Invoke();
 
         //resume time
-        inTransition = false;
+        InTransition = false;
         Debug.Log("finished flip");
         yield return null;
     }
