@@ -1211,7 +1211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4060183894677920287, guid: 9835960b6c40c5f40b56b48f9b36d6f7, type: 3}
       propertyPath: m_Name
-      value: BADDYSPAWNER
+      value: GREENSPAWNER
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9835960b6c40c5f40b56b48f9b36d6f7, type: 3}

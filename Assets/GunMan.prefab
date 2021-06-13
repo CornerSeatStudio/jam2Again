@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3027654041839870060}
   - component: {fileID: 149877005003160199}
   m_Layer: 3
-  m_Name: BowMan
+  m_Name: GunMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -465590367
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8307952290382044993, guid: 2f2089ac3a9d6534c9eaa19563b085c8, type: 3}
+  m_Sprite: {fileID: 1583379227491304955, guid: 8848a10d8c008b24db5557b41a7bfa25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audArrow: {fileID: 0}
   arrowForce: 500
-  arrowPrefab: {fileID: 4280031618453610032, guid: 8f04352d20fc2454084fa89daf3d6a43, type: 3}
+  arrowPrefab: {fileID: 4280031618453610032, guid: aebe4234b7e03f14791d1a0a31007ee2, type: 3}
   arrowSpawn: {fileID: 1484856351611427569}
 --- !u!1 &4019445940931051599
 GameObject:
