@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Player))]
 public class WizMan : MonoBehaviour {
@@ -18,9 +19,12 @@ public class WizMan : MonoBehaviour {
     public float abilityCooldown = 5f;
     bool cooldowning = false;
     bool abilityCooldowning = false;
+
+    GameHandler gameHandler;
    
     private void Start() {
         player = this.GetComponent<Player>();
+        gameHandler = FindObjectOfType<GameHandler>();
     }
     private void Update() {
         if(player.Health <= 0) return;
@@ -32,11 +36,21 @@ public class WizMan : MonoBehaviour {
 
         if(Input.GetButtonDown("Fire2") && !abilityCooldowning){
             StartCoroutine(doAbility());
+            StartCoroutine(barHandle());
 
         }
     }
 
-
+    public Slider cooldownbar;
+    IEnumerator barHandle(){
+        float t = abilityCooldown;
+        while(t > 0){
+            cooldownbar.value = Mathf.InverseLerp(0, abilityCooldown, t);
+            t -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        cooldownbar.value = 0;
+    }
 
     IEnumerator doAbility(){
         abilityCooldowning = true;
@@ -74,7 +88,7 @@ public class WizMan : MonoBehaviour {
 
 
         GameObject orb = Instantiate(orbPrefab, orbSpawnPos.position, transform.rotation);
-        StartCoroutine(handleOrb(orb.GetComponent<OrbColhandler>(), !player.FacingLeft ? 1 : -1));
+        gameHandler.StartCoroutine(handleOrb(orb.GetComponent<OrbColhandler>(), !player.FacingLeft ? 1 : -1));
         // orbRB.AddForce(transform.right * arrowForce * , ForceMode2D.Impulse);
 
     }
@@ -95,7 +109,7 @@ public class WizMan : MonoBehaviour {
     }
 
     public void explodeOrb(GameObject orb){
-        AudioSource audio = GetComponent<AudioSource>();
+        AudioSource audio = orb.GetComponent<AudioSource>();
         audio.PlayOneShot(audExplod);
         orb.GetComponent<Animator>().SetTrigger("Blow");
 

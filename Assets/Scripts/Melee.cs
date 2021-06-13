@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Player))]
 public class Melee : MonoBehaviour {
@@ -12,15 +13,39 @@ public class Melee : MonoBehaviour {
     public float abilityCooldown = 3f;
 
     bool abilityCooldowning = false;
+    private bool cooldowning = false;
+
 
     private void Start() {
         player = this.GetComponent<Player>();
     }
     private void Update() {
-                if(player.Health <= 0) return;
+        if(player.Health <= 0) return;
 
-        if(Input.GetButtonDown("Fire1")) conductAttack();    
-        if(Input.GetButtonDown("Fire2") && !abilityCooldowning) StartCoroutine(doAbility()); 
+        if(Input.GetButtonDown("Fire1") && !cooldowning) StartCoroutine(manageCooldown());    
+        if(Input.GetButtonDown("Fire2") && !abilityCooldowning) {
+            StartCoroutine(doAbility()); 
+            StartCoroutine(barHandle());
+        }
+    }
+
+
+    public Slider cooldownbar;
+    IEnumerator barHandle(){
+        float t = abilityCooldown;
+        while(t > 0){
+            cooldownbar.value = Mathf.InverseLerp(0, abilityCooldown, t);
+            t -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        cooldownbar.value = 0;
+    }
+
+    IEnumerator manageCooldown(){
+        cooldowning = true;
+        conductAttack();   
+        yield return new WaitForSeconds(.34f);
+        cooldowning = false;
     }
 
     IEnumerator doAbility(){

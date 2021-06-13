@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 [RequireComponent(typeof(Player))]
 public class BowMan : MonoBehaviour {
 
@@ -17,8 +17,10 @@ public class BowMan : MonoBehaviour {
     bool firing = false;
     public float abilityCooldown = 5f;
     bool abilityCooldowning = false;
+    GameHandler gameHandler;
     private void Start() {
         player = this.GetComponent<Player>();
+        gameHandler = FindObjectOfType<GameHandler>();
     }
     private void Update() {
 
@@ -28,10 +30,22 @@ public class BowMan : MonoBehaviour {
 
         if(Input.GetButtonDown("Fire2") && !abilityCooldowning){
             StartCoroutine(doAbility());
+            StartCoroutine(barHandle());
 
         } 
     }
 
+    public Slider cooldownbar;
+    IEnumerator barHandle(){
+        float t = abilityCooldown;
+        while(t > 0){
+            
+            cooldownbar.value = Mathf.InverseLerp(0, abilityCooldown, t);
+            t -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        cooldownbar.value = 0;
+    }
     IEnumerator doAbility(){
         abilityCooldowning = true;
         player.Animator.Play(Animator.StringToHash("Ability"));
@@ -47,7 +61,7 @@ public class BowMan : MonoBehaviour {
         GameObject grenade = Instantiate(grenadePrefab, arrowSpawn.position, Quaternion.Euler(new Vector3(rot.x,rot.y+ (player.FacingLeft ? 180 : 0),rot.z)));
         Rigidbody2D grenadeRB = grenade.GetComponent<Rigidbody2D>();
         grenadeRB.AddForce(transform.right * grenadeForce * (transform.localScale.x > 0 ? 1 : -1), ForceMode2D.Impulse);
-        StartCoroutine(tickerNade(grenade));
+        gameHandler.StartCoroutine(tickerNade(grenade));
         AudioSource audio = GetComponent<AudioSource>();
     }
 
