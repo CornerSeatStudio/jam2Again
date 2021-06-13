@@ -129,7 +129,8 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void onDeath(){
+    public void onDeath(){
+        //todo fall to floor
         Animator.Play(Animator.StringToHash("death"));
         Col.enabled = false;
         Rb2D.isKinematic = true;
