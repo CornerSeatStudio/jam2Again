@@ -13,9 +13,10 @@ public class WizMan : MonoBehaviour {
     public Transform orbSpawnPos;
     public float orbMoveSpeed;
     public float explosionRadius = 8f;
-    
     public float attackCooldown = 2f;
+    public float abilityCooldown = 5f;
     bool cooldowning = false;
+    bool abilityCooldowning = false;
    
     private void Start() {
         player = this.GetComponent<Player>();
@@ -25,7 +26,24 @@ public class WizMan : MonoBehaviour {
             
             StartCoroutine(manageCooldown());
         } 
+
+        if(Input.GetButtonDown("Fire2") && !abilityCooldowning){
+            StartCoroutine(doAbility());
+
+        }
     }
+
+
+
+    IEnumerator doAbility(){
+        abilityCooldowning = true;
+        player.Animator.Play(Animator.StringToHash("Ability"));
+        yield return new WaitForSeconds(.2f);
+        conductAbility();
+        yield return new WaitForSeconds(abilityCooldown);
+        abilityCooldowning = false;
+    }
+
 
     IEnumerator manageCooldown(){
         cooldowning = true;
@@ -38,8 +56,16 @@ public class WizMan : MonoBehaviour {
         cooldowning = false;
     }
 
-    void conductAttack(){
+    void conductAbility(){
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        foreach(Collider2D col in cols){
+            if(col.GetComponent<Baddie>()){
+                col.GetComponent<Baddie>().takeDamage();
+            }
+        }
+    }
 
+    void conductAttack(){
 
 
         GameObject orb = Instantiate(orbPrefab, orbSpawnPos.position, transform.rotation);

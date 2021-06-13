@@ -7,13 +7,35 @@ public class Melee : MonoBehaviour {
     public AudioClip audSwing;
     Player player;
     public float meleeRange = 8f; 
+    public float abilityCooldown = 5f;
+
+    bool abilityCooldowning = false;
+
     private void Start() {
         player = this.GetComponent<Player>();
     }
     private void Update() {
         if(Input.GetButtonDown("Fire1")) conductAttack();    
+        if(Input.GetButtonDown("Fire2") && !abilityCooldowning) StartCoroutine(doAbility()); 
     }
 
+    IEnumerator doAbility(){
+        abilityCooldowning = true;
+        player.Animator.SetTrigger(Animator.StringToHash("Ability"));
+   
+        player.Invulnerable = true;
+        player.Col.enabled = false;
+
+        
+
+
+        player.Col.enabled = true;
+        player.Invulnerable = false;
+        yield return new WaitForSeconds(abilityCooldown);
+        abilityCooldowning = false;
+    }
+
+    
     void conductAttack(){
         AudioSource audio = GetComponent<AudioSource>();
         audio.PlayOneShot(audSwing);
