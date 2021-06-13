@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: a059c706e3b4a924e945ddd502984a08
+guid: ba26e35c23e058545a694e609eb4ea9d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3799425862281759760
-    second: wiz_fall_0
+      213: 5434489139926725168
+    second: wiz_boom_0
+  - first:
+      213: -4726950921894567234
+    second: wiz_boom_1
+  - first:
+      213: -334326005904328055
+    second: wiz_boom_2
+  - first:
+      213: -8840113916794164856
+    second: wiz_boom_3
+  - first:
+      213: 7753708680804907185
+    second: wiz_boom_4
+  - first:
+      213: 1434952318903040881
+    second: wiz_boom_5
+  - first:
+      213: 7228606365323485535
+    second: wiz_boom_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,7 +148,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wiz_fall_0
+      name: wiz_boom_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032fc01641f2b6b40800000000000000
+      internalID: 5434489139926725168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_boom_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2e4c55e2f766eb0800000000000000
+      internalID: -4726950921894567234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_boom_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ab5ead44c3c5bf0800000000000000
+      internalID: -334326005904328055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_boom_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8892f77ca3b915580800000000000000
+      internalID: -8840113916794164856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_boom_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b83d3bd6f4ba9b60800000000000000
+      internalID: 7753708680804907185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_boom_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17bb6d50889f9e310800000000000000
+      internalID: 1434952318903040881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_boom_6
       rect:
         serializedVersion: 2
         x: 0
@@ -144,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01c8cb701b54ab430800000000000000
-      internalID: 3799425862281759760
+      spriteID: f51eb32c03b215460800000000000000
+      internalID: 7228606365323485535
       vertices: []
       indices: 
       edges: []
@@ -153,7 +297,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 77551e80b61cea64487956e934b1c189
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

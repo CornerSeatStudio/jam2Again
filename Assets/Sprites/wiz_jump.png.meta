@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 358bcfcd40f6bc2458d9b89d5b47f113
+guid: 3633ea10495ebb948811c5eea6c105bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1415603161104663927
-    second: player_jac_idle (1)_0
-  - first:
-      213: -1364334250098250174
-    second: player_jac_idle (1)_1
-  - first:
-      213: -1613817794428865458
-    second: player_jac_idle (1)_2
-  - first:
-      213: 5407459266748619093
-    second: player_jac_idle (1)_3
+      213: -2546361165408408356
+    second: wiz_jump_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,49 +130,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_jac_idle (1)_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7754098239b35a310800000000000000
-      internalID: 1415603161104663927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_idle (1)_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24eaef36a39e01de0800000000000000
-      internalID: -1364334250098250174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_idle (1)_2
+      name: wiz_jump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -195,29 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e44fcde24419a99e0800000000000000
-      internalID: -1613817794428865458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_idle (1)_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55912fb9d872b0b40800000000000000
-      internalID: 5407459266748619093
+      spriteID: cdc6bf1e20289acd0800000000000000
+      internalID: -2546361165408408356
       vertices: []
       indices: 
       edges: []
@@ -225,7 +153,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: aaedcba0da4a3ee49948e37073373300
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

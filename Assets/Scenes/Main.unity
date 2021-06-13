@@ -1517,6 +1517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunMan
       objectReference: {fileID: 0}
+    - target: {fileID: 3027654041839870061, guid: a33f91ea5e78ace4e9affc3fc0d80f67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a33f91ea5e78ace4e9affc3fc0d80f67, type: 3}
 --- !u!1 &1514565557

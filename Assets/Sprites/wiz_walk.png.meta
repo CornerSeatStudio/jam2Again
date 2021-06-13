@@ -1,28 +1,19 @@
 fileFormatVersion: 2
-guid: ba26e35c23e058545a694e609eb4ea9d
+guid: 358bcfcd40f6bc2458d9b89d5b47f113
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 882817301451399551
-    second: player_jac_boom_0
+      213: 6369966045053498861
+    second: wiz_walk_0
   - first:
-      213: 4729722935801631027
-    second: player_jac_boom_1
+      213: -4203848186603627038
+    second: wiz_walk_1
   - first:
-      213: -8456787927177284192
-    second: player_jac_boom_2
+      213: -8375946588504528242
+    second: wiz_walk_2
   - first:
-      213: 7909964656367530067
-    second: player_jac_boom_3
-  - first:
-      213: -5898716259397055208
-    second: player_jac_boom_4
-  - first:
-      213: -2101932731659498657
-    second: player_jac_boom_5
-  - first:
-      213: -7882611129230121829
-    second: player_jac_boom_6
+      213: 2365030817973293584
+    second: wiz_walk_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -148,70 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_jac_boom_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f71649688a5604c00800000000000000
-      internalID: 882817301451399551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_boom_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 331597273f953a140800000000000000
-      internalID: 4729722935801631027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_boom_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a539cbaf2473aa80800000000000000
-      internalID: -8456787927177284192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_boom_3
+      name: wiz_walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -225,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3507ea832f6d5cd60800000000000000
-      internalID: 7909964656367530067
+      spriteID: de5b6b25e5aa66850800000000000000
+      internalID: 6369966045053498861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_jac_boom_4
+      name: wiz_walk_1
       rect:
         serializedVersion: 2
         x: 32
@@ -246,35 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81d41d790dc832ea0800000000000000
-      internalID: -5898716259397055208
+      spriteID: 2ed12d3e85ee8a5c0800000000000000
+      internalID: -4203848186603627038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_jac_boom_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5b4bab215f64d2e0800000000000000
-      internalID: -2101932731659498657
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jac_boom_6
+      name: wiz_walk_2
       rect:
         serializedVersion: 2
         x: 0
@@ -288,8 +195,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b94a2bb11f65b9290800000000000000
-      internalID: -7882611129230121829
+      spriteID: e8aea8694f8a2cb80800000000000000
+      internalID: -8375946588504528242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_walk_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012562c9ff642d020800000000000000
+      internalID: 2365030817973293584
       vertices: []
       indices: 
       edges: []
@@ -297,7 +225,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0d5a064a87e9a34438d9c6773c5e344a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

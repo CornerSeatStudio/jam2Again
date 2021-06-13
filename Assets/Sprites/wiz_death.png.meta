@@ -3,23 +3,26 @@ guid: e9e9bbb50ea8bf84e8ef2cc8cb479df0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7146949730499649962
-    second: WeChat Image_20210613024317_0
+      213: -5722064128164612498
+    second: wiz_death_0
   - first:
-      213: 7084359132846317017
-    second: WeChat Image_20210613024317_1
+      213: 1797141240041737469
+    second: wiz_death_1
   - first:
-      213: 5325608999429702191
-    second: WeChat Image_20210613024317_2
+      213: 1464231066575224130
+    second: wiz_death_2
   - first:
-      213: 2568468142754992959
-    second: WeChat Image_20210613024317_3
+      213: -1154963553327800282
+    second: wiz_death_3
   - first:
-      213: -1629221577985479359
-    second: WeChat Image_20210613024317_4
+      213: -9089045939155462549
+    second: wiz_death_4
   - first:
-      213: -5917126316012602876
-    second: WeChat Image_20210613024317_5
+      213: -4400396892593951037
+    second: wiz_death_5
+  - first:
+      213: 8908390728989170949
+    second: wiz_death_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,7 +148,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WeChat Image_20210613024317_0
+      name: wiz_death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65e9ef5161fe0dc90800000000000000
-      internalID: -7146949730499649962
+      spriteID: e663eb20ef42790b0800000000000000
+      internalID: -5722064128164612498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeChat Image_20210613024317_1
+      name: wiz_death_1
       rect:
         serializedVersion: 2
         x: 32
@@ -180,14 +183,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dd5996c813b05260800000000000000
-      internalID: 7084359132846317017
+      spriteID: dfc84e7af6ab0f810800000000000000
+      internalID: 1797141240041737469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeChat Image_20210613024317_2
+      name: wiz_death_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24dbe40b56ef15410800000000000000
+      internalID: 1464231066575224130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_death_3
       rect:
         serializedVersion: 2
         x: 0
@@ -201,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2281af2b2d58e940800000000000000
-      internalID: 5325608999429702191
+      spriteID: 620af5b74ceb8ffe0800000000000000
+      internalID: -1154963553327800282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeChat Image_20210613024317_3
+      name: wiz_death_4
       rect:
         serializedVersion: 2
         x: 32
@@ -222,14 +246,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3391d1ea2805a320800000000000000
-      internalID: 2568468142754992959
+      spriteID: b669e69cfd83dd180800000000000000
+      internalID: -9089045939155462549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeChat Image_20210613024317_4
+      name: wiz_death_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce643a2756aee2c0800000000000000
+      internalID: -4400396892593951037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wiz_death_6
       rect:
         serializedVersion: 2
         x: 0
@@ -243,29 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14d26c75b97d369e0800000000000000
-      internalID: -1629221577985479359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WeChat Image_20210613024317_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40af3f247f422eda0800000000000000
-      internalID: -5917126316012602876
+      spriteID: 50d58c95b26f0ab70800000000000000
+      internalID: 8908390728989170949
       vertices: []
       indices: 
       edges: []
@@ -273,7 +297,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 24b2c2d8966128a40bd6698745f7d897
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
