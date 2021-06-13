@@ -9,6 +9,7 @@ public class GameHandler : MonoBehaviour
     public AudioClip audCOIN;
 
     public Player Player1 {get; private set; }
+    public Player Player2 {get; private set; }
     public GameObject rotatingContraption;
     public List<GameObject> characters;
     public static float currScore;
@@ -18,6 +19,7 @@ public class GameHandler : MonoBehaviour
     public List<Transform> pickupSpawnpoints;
     public GameObject portalPrefab;
     public Transform playerSpawnPos1;
+    public Transform playerSpawnPos2;
     public bool InTransition {get; set; }= false;
 
     private static readonly Vector3 DIR1 = new Vector3(0f, 0f, 0f);
@@ -34,7 +36,7 @@ public class GameHandler : MonoBehaviour
     public GameObject deathMenu;
 
     int CURR_INDEX;
-
+    public static bool IsCoop {get; set; } = false;
     public void Start(){
         spawnNextPickup();
         currScore = 0f;
@@ -42,6 +44,13 @@ public class GameHandler : MonoBehaviour
         CURR_INDEX = UnityEngine.Random.Range(0, characters.Count);
         GameObject newPlayer = Instantiate(characters[CURR_INDEX], playerSpawnPos1.position, playerSpawnPos1.rotation);
         Player1 = newPlayer.GetComponent<Player>();
+        Player1.Player_ID = 1;
+        if(IsCoop){
+            GameObject newPlayer2 = Instantiate(characters[(CURR_INDEX+1) % 3], playerSpawnPos2.position, playerSpawnPos2.rotation);
+            Player2 = newPlayer2.GetComponent<Player>();
+            Player2.Player_ID = 2;
+        }
+        
         //initial rotate stage? default for now
         CurrRotation = DIR1;
         GameEnd = false;
@@ -67,6 +76,7 @@ public class GameHandler : MonoBehaviour
         GameObject newPlayer = Instantiate(characters[newPlayerIndex], oldPlayer.transform.position, oldPlayer.transform.rotation);
         Player1 = newPlayer.GetComponent<Player>();
         Player1.Health = oldPlayer.Health;
+        Player1.Player_ID = oldPlayer.Player_ID;
         oldPlayer.gameObject.SetActive(false);
 
     }

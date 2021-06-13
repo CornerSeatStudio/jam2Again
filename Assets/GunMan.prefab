@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audDeath: {fileID: 8300000, guid: a72c360e4cb99c844829e16cee499d00, type: 3}
   audJump: {fileID: 8300000, guid: 5250290811bf7944a882fd2765bdf70e, type: 3}
+  audDamage: {fileID: 8300000, guid: e65ee142f60196c4c94a8cf70bd339f4, type: 3}
   initHealth: 2
   invulnTime: 2
   jumpForce: 80

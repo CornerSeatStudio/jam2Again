@@ -14,6 +14,7 @@ public class DeathBounds : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Player")){
+            other.GetComponent<Player>().Health = 0;
             other.GetComponent<Player>().onDeath();
         }
     }

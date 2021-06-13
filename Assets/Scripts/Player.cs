@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public int Player_ID {get; set; } = 1;
     public AudioClip audDeath;
     public AudioClip audJump;
+    public AudioClip audDamage;
     public int initHealth = 3;
     public float invulnTime = 2f;
 
@@ -127,6 +129,7 @@ public class Player : MonoBehaviour {
 
     public void takeDamage(){
         Health--;
+        GetComponent<AudioSource>().PlayOneShot(audDamage);
         if(Health <= 0){
             onDeath();
         } else {
